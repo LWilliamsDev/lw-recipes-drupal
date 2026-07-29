@@ -1,0 +1,55 @@
+uuid: 0be8eefc-545a-469d-ac05-2d91e9c9ab7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related
+    - field.field.node.recipe.allergen
+    - field.field.node.recipe.course
+    - field.field.node.recipe.diet
+    - field.field.node.recipe.excerpt
+    - field.field.node.recipe.hero_image
+    - field.field.node.recipe.ingredients_col1
+    - field.field.node.recipe.ingredients_col2
+    - field.field.node.recipe.instructions_col1
+    - field.field.node.recipe.instructions_col2
+    - field.field.node.recipe.prep_time
+    - field.field.node.recipe.protein
+    - field.field.node.recipe.serves
+    - field.field.node.recipe.total_time
+    - image.style.625x341
+    - node.type.recipe
+  module:
+    - media
+    - user
+id: node.recipe.related
+targetEntityType: node
+bundle: recipe
+mode: related
+content:
+  hero_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 625x341
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  allergen: true
+  content_moderation_control: true
+  course: true
+  diet: true
+  excerpt: true
+  ingredients_col1: true
+  ingredients_col2: true
+  instructions_col1: true
+  instructions_col2: true
+  links: true
+  prep_time: true
+  protein: true
+  serves: true
+  total_time: true

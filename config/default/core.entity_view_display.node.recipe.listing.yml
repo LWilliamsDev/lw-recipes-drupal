@@ -1,0 +1,99 @@
+uuid: 99c17a63-10f8-4bfd-8f93-b9f4c4f87e63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.listing
+    - field.field.node.recipe.allergen
+    - field.field.node.recipe.course
+    - field.field.node.recipe.diet
+    - field.field.node.recipe.excerpt
+    - field.field.node.recipe.hero_image
+    - field.field.node.recipe.ingredients_col1
+    - field.field.node.recipe.ingredients_col2
+    - field.field.node.recipe.instructions_col1
+    - field.field.node.recipe.instructions_col2
+    - field.field.node.recipe.prep_time
+    - field.field.node.recipe.protein
+    - field.field.node.recipe.serves
+    - field.field.node.recipe.total_time
+    - image.style.300x164
+    - node.type.recipe
+  module:
+    - media
+    - text
+    - user
+id: node.recipe.listing
+targetEntityType: node
+bundle: recipe
+mode: listing
+content:
+  allergen:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  course:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  diet:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  excerpt:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  hero_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 300x164
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  prep_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  total_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  content_moderation_control: true
+  ingredients_col1: true
+  ingredients_col2: true
+  instructions_col1: true
+  instructions_col2: true
+  links: true
+  protein: true
+  serves: true

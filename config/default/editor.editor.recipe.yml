@@ -1,0 +1,39 @@
+uuid: cb21b5a8-f624-459c-bbd4-7950e8bf06c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.recipe
+  module:
+    - ckeditor5
+format: recipe
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - bulletedList
+      - numberedList
+      - link
+      - subscript
+      - superscript
+      - underline
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+        styles: false
+      multiBlock: true
+    linkit_extension:
+      linkit_enabled: false
+image_upload:
+  status: false

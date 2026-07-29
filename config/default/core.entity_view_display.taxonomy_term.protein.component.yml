@@ -1,0 +1,36 @@
+uuid: b64d70c6-ddb6-411a-97bb-3b3c6ce71dc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.component
+    - field.field.taxonomy_term.protein.image
+    - image.style.902x492
+    - taxonomy.vocabulary.protein
+  module:
+    - media
+    - text
+id: taxonomy_term.protein.component
+targetEntityType: taxonomy_term
+bundle: protein
+mode: component
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 902x492
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

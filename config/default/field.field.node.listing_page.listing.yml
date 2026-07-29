@@ -1,0 +1,30 @@
+uuid: 83e58a97-3d68-4314-86fb-7016a54de3ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.listing
+    - node.type.listing_page
+  module:
+    - viewsreference
+id: node.listing_page.listing
+field_name: listing
+entity_type: node
+bundle: listing_page
+label: Listing
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+  preselect_views:
+    recipe_listing: recipe_listing
+  enabled_settings: {  }
+field_type: viewsreference

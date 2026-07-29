@@ -1,0 +1,28 @@
+uuid: 0b74cd88-85a5-4d21-8d25-f4500db71dbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.listing_page.listing
+    - node.type.listing_page
+  module:
+    - user
+    - viewsreference
+id: node.listing_page.full
+targetEntityType: node
+bundle: listing_page
+mode: full
+content:
+  listing:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  links: true

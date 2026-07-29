@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.ingredients_col2
-    - filter.format.plain_text
+    - filter.format.recipe
     - node.type.recipe
   module:
     - text
@@ -20,5 +20,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
-    - plain_text
+    - recipe
 field_type: text_long

@@ -1,0 +1,24 @@
+uuid: 720adb0a-007f-4019-a128-d708b9fc7648
+langcode: en
+status: true
+dependencies:
+  module:
+    - linkit
+name: Recipe
+format: recipe
+weight: 0
+filters:
+  entity_links:
+    id: entity_links
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
+      media_substitution: metadata

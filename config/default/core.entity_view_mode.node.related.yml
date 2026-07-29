@@ -1,0 +1,11 @@
+uuid: fbf4a08a-29fd-49d8-a944-305f001aa7f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.related
+label: Related
+description: null
+targetEntityType: node
+cache: true

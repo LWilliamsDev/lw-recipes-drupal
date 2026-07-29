@@ -1,0 +1,17 @@
+uuid: 452ad0c7-38ce-434b-b356-09a2a2321ea5
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 1115x608
+label: 1115x608
+effects:
+  b0a3336f-6cd9-486a-87bc-c5eb06dc5860:
+    uuid: b0a3336f-6cd9-486a-87bc-c5eb06dc5860
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1115
+      height: 608
+      crop_type: focal_point

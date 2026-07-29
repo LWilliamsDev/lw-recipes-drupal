@@ -1,0 +1,21 @@
+uuid: 8a3a5d08-0be0-4c8e-b381-3d52d3cbf67d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - views
+    - viewsreference
+id: node.listing
+field_name: listing
+entity_type: node
+type: viewsreference
+settings:
+  target_type: view
+module: viewsreference
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

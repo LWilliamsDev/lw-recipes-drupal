@@ -2,7 +2,10 @@ uuid: f51fd433-ca7f-4930-97cc-6ab44a950f21
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.recipe
   module:
+    - filter
     - media
     - system
 _core:
@@ -13,4 +16,5 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'use text format recipe'
   - 'view media'

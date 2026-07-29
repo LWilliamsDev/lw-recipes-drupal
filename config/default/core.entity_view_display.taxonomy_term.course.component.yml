@@ -1,0 +1,36 @@
+uuid: 63f15671-a295-46ae-9df2-8ce7e4d57f91
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.component
+    - field.field.taxonomy_term.course.image
+    - image.style.902x492
+    - taxonomy.vocabulary.course
+  module:
+    - media
+    - text
+id: taxonomy_term.course.component
+targetEntityType: taxonomy_term
+bundle: course
+mode: component
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 902x492
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,138 @@
+uuid: 1404fbde-8aef-46f1-a21f-480b271c3228
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.recipe.allergen
+    - field.field.node.recipe.course
+    - field.field.node.recipe.diet
+    - field.field.node.recipe.excerpt
+    - field.field.node.recipe.hero_image
+    - field.field.node.recipe.ingredients_col1
+    - field.field.node.recipe.ingredients_col2
+    - field.field.node.recipe.instructions_col1
+    - field.field.node.recipe.instructions_col2
+    - field.field.node.recipe.prep_time
+    - field.field.node.recipe.protein
+    - field.field.node.recipe.serves
+    - field.field.node.recipe.total_time
+    - image.style.1115x608
+    - node.type.recipe
+  module:
+    - media
+    - text
+    - user
+id: node.recipe.full
+targetEntityType: node
+bundle: recipe
+mode: full
+content:
+  allergen:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  course:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  diet:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  excerpt:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  hero_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: 1115x608
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  ingredients_col1:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  ingredients_col2:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  instructions_col1:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  instructions_col2:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  prep_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  protein:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  serves:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  total_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  content_moderation_control: true
+  links: true

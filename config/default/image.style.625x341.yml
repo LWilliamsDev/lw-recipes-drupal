@@ -1,0 +1,17 @@
+uuid: 5976b685-7687-49bd-a270-20582026bacf
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 625x341
+label: 625x341
+effects:
+  5973fcee-4323-4da4-a22c-ee22ce378a54:
+    uuid: 5973fcee-4323-4da4-a22c-ee22ce378a54
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 625
+      height: 341
+      crop_type: focal_point

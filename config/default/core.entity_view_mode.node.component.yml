@@ -1,0 +1,11 @@
+uuid: 3c0ec746-cc78-4673-b94e-717bbad88ca1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.component
+label: Component
+description: null
+targetEntityType: node
+cache: true
