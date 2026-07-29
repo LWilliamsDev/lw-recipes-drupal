@@ -1,0 +1,18 @@
+uuid: 1e7ad2dc-7368-4afa-b299-a4d40f77dcdb
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: local
+description: 'Development settings'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/splits/default/local
+module:
+  field_ui: 0
+  views_ui: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
