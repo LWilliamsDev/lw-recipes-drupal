@@ -1,0 +1,7 @@
+lw_recipes.settings:
+  path: '/admin/config/content/lw-recipes-core'
+  defaults:
+    _form: '\Drupal\lw_recipes_core\Form\RecipesSettingsForm'
+    _title: 'Recipe settings'
+  requirements:
+    _permission: 'administer site configuration'

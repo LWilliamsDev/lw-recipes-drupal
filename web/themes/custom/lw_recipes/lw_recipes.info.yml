@@ -1,0 +1,15 @@
+name: LW Recipes
+type: theme
+package: Custom
+base theme: false
+description: 'Recipe theme'
+core_version_requirement: ^11
+
+libraries:
+  - lw_recipes/global
+
+regions:
+  main_menu: 'Main Menu'
+  search: 'Global Search'
+  content: Content
+  footer: Footer

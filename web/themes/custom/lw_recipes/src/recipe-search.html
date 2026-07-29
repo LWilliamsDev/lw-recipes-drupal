@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+		<a href="#main" class="skip-link sr-only">Skip to main content</a>
+	<header class="grid grid-cols-[3fr_1fr] md:grid-cols-[0.5fr_1fr] items-center px-4 py-8 md:px-12 md:py-8">
+		<div class="w-1/2 md:w-49"><a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" /></a></div>
+		<div class="md:hidden flex items-center justify-end">
+			<button aria-label="Toggle mobile menu" class="mobile-menu-icon px-[10px] w-auto cursor-pointer h-[24px]" id="toggle-mobile-menu" aria-controls="primary-nav" aria-expanded="false">
+				<img src="assets/img/mobile-menu-icon.svg" alt="Open mobile menu icon" class="mobile-menu-open">
+				<img src="assets/img/close.svg" alt="Close mobile menu icon" class="mobile-menu-close">
+			</button>
+			<button aria-label="Toggle search" id="search-btn-mobile" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer p-2">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search">
+			</button>
+		</div>
+		<div id="search-form" class="hidden row-start-2 col-span-full justify-self-end mt-0 relative z-1 p-0">
+			<form class="absolute -top-[9px] right-0 bg-(--color-tan) rounded-sm p-2 w-[241px] md:top-0">
+				<div class="search-form">
+					<input type="text" key="search" placeholder="Search... " class="rounded-sm border border-(--color-mid-green) border-solid p-2" id="search-input" />
+					<button type="submit" class="rounded-sm bg-(--color-brown) p-2 text-(--color-white) font-medium" id="search-submit">Go</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-span-full row-start-3 mt-[15px] md:row-start-1 md:col-start-2 md:justify-self-end md:flex">
+			<nav class="-mx-4 md:mx-0">
+				<ul class="nav hidden md:flex text-left md:gap-x-8" id="primary-nav">
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:relative md:hover:bg-(--color-tan) md:p-4 menu-item-has-children"><a href="#" class="px-4 inline-block md:px-0">Recipes</a> <button class="cursor-pointer ml-auto mr-4 open-toggle md:pointer-events-none md:mr-0" aria-label="Expand or collapse the Recipes submenu" id="toggle-recipes" aria-controls="recipes-submenu" aria-expanded="false"><img src="assets/img/expand.svg" alt="Expand the Recipes submenu" class="menu-expand" /><img src="assets/img/collapse.svg" alt="Collapse the Recipes submenu" class="menu-collapse"/></button>
+						<ul class="submenu pl-4 w-full md:p-1 md:absolute md:z-1 md:top-12 md:shadow-2xl md:rounded-sm md:w-max md:left-0" id="recipes-submenu">
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Paleo Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4 md:py-5">Keto Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Carb Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Fat Recipes</a></li>
+						</ul>
+					</li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4" ><a href="#" class="px-4 inline-block md:px-0">About</a></li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4"><a href="#" class="px-4 inline-block md:px-0">Shop</a></li>
+				</ul>
+			</nav>
+			<button aria-label="Toggle search" id="search-btn-desktop" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer hidden md:block p-4 ml-4">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search"></button>
+		</div>
+	</header>
+	<main id="main">
+		<div id="root" class="px-4 md:px-12">
+				<div class="recipes-search mx-auto">
+					<div class="form mt-8 mb-8 md:mt-12 md:mb-12">
+						<form role="search" class="grid grid-cols-[1fr_40px] gap-x-2">
+							<label for="search" class="sr-only">Search</label>
+							<input type="text" id="search" class="rounded-sm border border-(--color-mid-green) border-solid p-2" name="search" placeholder="Search Recipes..." value="">
+							<button id="listing--search" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium cursor-pointer">Go</button>
+						</form>
+						<ul class="pt-5 flex flex-wrap gap-x-5">
+							<li>
+								<button data-refiner="course" data-id="5" class="chosen-refiner cursor-pointer rounded-sm border-1 text-(--color-brown) p-[5px]">Appetizer</button>
+							</li>
+						</ul>
+					</div>
+				<div class="results-container md:grid md:grid-cols-[0.5fr_2fr] md:gap-4"><div class="refiners mb-8 md:mb-0">
+					<div class="refiner-fieldset mb-4">
+						<fieldset>
+							<legend class="sr-only">Filter by Courses</legend>
+							<details class="tax-refiner">
+								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Courses</summary>
+									<div class="refiner-checkbox"><input id="course--5" data-slug="course" type="checkbox" value="5">
+									<label for="course--5" class="pl-2 text-(--color-dark-green)">Appetizer</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="course--7" data-slug="course" type="checkbox" value="7">
+									<label for="course--7" class="pl-2 text-(--color-dark-green)">Dessert</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="course--31" data-slug="course" type="checkbox" value="31">
+									<label for="course--31" class="pl-2 text-(--color-dark-green)">Entree</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="course--6" data-slug="course" type="checkbox" value="6">
+									<label for="course--6" class="pl-2 text-(--color-dark-green)">Side</label>
+								</div>
+							</details>
+						</fieldset>
+					</div>
+					<div class="refiner-fieldset mb-4">
+						<fieldset>
+							<legend class="sr-only">Filter by Diet</legend>
+							<details class="tax-refiner">
+								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Diet</summary>
+								<div class="refiner-checkbox">
+									<input id="diet--26" data-slug="diet" type="checkbox" value="26">
+									<label for="diet--26" class="pl-2 text-(--color-dark-green)">AIP</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--12" data-slug="diet" type="checkbox" value="12">
+									<label for="diet--12" class="pl-2 text-(--color-dark-green)">Keto</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--14" data-slug="diet" type="checkbox" value="14">
+									<label for="diet--14" class="pl-2 text-(--color-dark-green)">Low Carb</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--13" data-slug="diet" type="checkbox" value="13">
+									<label for="diet--13" class="pl-2 text-(--color-dark-green)">Low Fat</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--8" data-slug="diet" type="checkbox" value="8">
+									<label for="diet--8" class="pl-2 text-(--color-dark-green)">Paleo</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--9" data-slug="diet" type="checkbox" value="9">
+									<label for="diet--9" class="pl-2 text-(--color-dark-green)">Vegan</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--10" data-slug="diet" type="checkbox" value="10">
+									<label for="diet--10" class="pl-2 text-(--color-dark-green)">Vegetarian</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="diet--11" data-slug="diet" type="checkbox" value="11">
+									<label for="diet--11" class="pl-2 text-(--color-dark-green)">Whole30</label>
+								</div>
+							</details>
+						</fieldset>
+					</div>
+					<div class="refiner-fieldset mb-4">
+						<fieldset>
+							<legend class="sr-only">Filter by Allergen</legend>
+							<details class="tax-refiner">
+								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Allergen</summary>
+								<div class="refiner-checkbox">
+									<input id="allergen--20" data-slug="allergen" type="checkbox" value="20">
+									<label for="allergen--20" class="pl-2 text-(--color-dark-green)">Dairy Free</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="allergen--21" data-slug="allergen" type="checkbox" value="21">
+									<label for="allergen--21" class="pl-2 text-(--color-dark-green)">Gluten Free</label>
+								</div>
+								<div class="refiner-checkbox">
+									<input id="allergen--22" data-slug="allergen" type="checkbox" value="22">
+									<label for="allergen--22" class="pl-2 text-(--color-dark-green)">Nut Free</label>
+								</div>
+							</details>
+						</fieldset>
+					</div>
+				</div>
+				<div class="results">
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/keto-cake-pops/">Keto Cake Pops</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">With just 3g net carbs in each one, indulge in these keto cake pops at your next party or get together! They are also amazing for curbing quick sweet cravings. This cake pop recipe is for chocolate cake pops with notes to make other flavors.</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?course=7" data-id="7" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dessert</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href ="?diet-12" data-id="12" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Keto</a>
+								</li>
+								<li>
+									<a href="?allergen=22" data-id="22" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Nut Free</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/frosted-vanilla-donuts/">Frosted Vanilla Donuts</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">These paleo frosted vanilla donuts are a huge treat and easy to make, too! Healthy gluten free and dairy free baked donuts are dipped in a creamy vanilla frosting for a fun treat everyone will love. If you don’t have a donut pan, make them into cupcakes!</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=7" data-id="7" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dessert</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=8" data-id="8" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Paleo</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/keto-onion-rings/">Keto Onion Rings</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">Now you can enjoy this classic fast food alternative to fries again. It's a low-carb snack or appetizer that everyone will love!</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/mcdonalds-big-mac-casserole/">McDonald's Big Mac Casserole</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">If you're craving the iconic flavors of a McDonald's Big Mac but want to keep it low-carb, this Keto Big Mac Casserole is just the thing you need. It's easy to make, packed with all the classic Big Mac toppings, and perfect for meal prep or a family dinner. Plus, it's gluten-free and keto-friendly!</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?course=31" data-id="31" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Entree</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=12" data-id="12" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Keto</a>
+								</li>
+								<li>
+									<a href="?allergen=22" data-id="22" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Nut Free</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/fluffy-almond-flour-pancakes/">Fluffy Almond Flour Pancakes</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">Delicious hot and fluffy almond flour pancakes make a fantastic low-carb breakfast! They taste just like the ones you ate as a kid. But these come from an easy, gluten-free, keto recipe.
+							</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=31" data-id="31" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Entree</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=8" data-id="8" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Paleo</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/maple-cinnamon-candied-pecans/">Maple Cinnamon Candied Pecans</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">These crunchy, sweet and salty maple cinnamon candied pecans are a breeze to make and contain no refined sugar or dairy. They’re a naturally gluten free and paleo treat that are perfect for holiday gifts, as salad toppers or by the handful as a sweet snack.</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=7" data-id="7" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dessert</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=8" data-id="8" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Paleo</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/butternut-apple-and-chicken-sausage-hash/">Butternut, Apple, and Chicken Sausage Hash</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">This toasty, savory + sweet butternut squash hash with chicken sausage and apples is perfect for weekend brunches or breakfast for dinner!  It’s easy to make ahead of time for a quick breakfast.  Grain free, dairy-free, with no added sugar, and Whole30 compliant.
+							</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen-20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=31" data-id="31" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Entree</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?allergen=22" data-id="22" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Nut Free</a>
+								</li>
+								<li>
+									<a href="?diet=11" data-id="11" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Whole30</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/roasted-frozen-broccoli/">Roasted Frozen Broccoli</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">I'd love to be one of those people who finds chopping vegetables therapeutic, who derives joy from lovingly slicing broccoli into cute, evenly-sized florets. I do not, which is exactly why I am thrilled to report that you can make ROASTED FROZEN BROCCOLi.
+							</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?diet=26" data-id="26" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">AIP</a>
+								</li>
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?allergen=22" data-id="22" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Nut Free</a>
+								</li>
+								<li>
+									<a href="?course=6" data-id="6" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Side</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/turkey-keema-curry/">Turkey Keema Curry</a>
+							</h2>
+							<p class="mb-4 text-(--color-dark-green)">Packed with fresh and zingy flavours and plenty of punchy spices, this low-calorie, high-protein Indian turkey mince curry makes an easy midweek meal.
+							</p>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=31" data-id="31" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Entree</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=13" data-id="13" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Low Fat</a>
+								</li>
+								<li>
+									<a href="?allergen=22" data-id="22" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Nut Free</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+							<img src="assets/img/placeholder.png" alt="" class="rounded-lg">
+						</div>
+						<div class="lg:order-1 result-details">
+							<h2 class="text-2xl color-green text-(--color-green) mb-2">
+								<a href="https://recipes.staging/recipe/mint-matcha-cookies/">Mint Matcha Cookies</a>
+							</h2>
+							<ul class="flex gap-2 flex-wrap">
+								<li>
+									<a href="?allergen=20" data-id="20" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dairy Free</a>
+								</li>
+								<li>
+									<a href="?course=7" data-id="7" data-type="course" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Dessert</a>
+								</li>
+								<li>
+									<a href="?allergen=21" data-id="21" data-type="allergen" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Gluten Free</a>
+								</li>
+								<li>
+									<a href="?diet=9" data-id="9" data-type="diet" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">Vegan</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="pagination md:col-start-2 pb-5">
+					<nav class="pagination" aria-label="Pagination">
+						<ul class="pagination-numbers flex gap-2">
+							<!-- For demo purposes, we are pretending this is on page 6 of 11 -->
+							<li>
+								<a href="?pg=5" class="filter-link cursor-pointer rounded-sm border-1 p-[5px] text-(--color-brown)">Back</a>
+							</li>
+							<li>
+								<a href="?pg=1" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">1</a>
+							</li>
+							<li class="p-[5px] text-(--color-mid-green)">
+                				<span>…</span>
+            				</li>
+            				<li>
+								<a href="?pg=3" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">3</a>
+							</li>
+							<li>
+								<a href="?pg=4" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">4</a>
+							</li>
+							<li>
+								<a href="?pg=5" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">5</a>
+							</li>
+							<li>
+                				<a href="?pg=6" data-page="6" class="filter-link current-page text-(--color-white) cursor-pointer rounded-sm border-1 p-[5px]" aria-current="page">6</a>
+            				</li>
+            				<li>
+								<a href="?pg=7" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">7</a>
+							</li>
+							<li>
+								<a href="?pg=8" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">8</a>
+							</li>
+							<li>
+								<a href="?pg=9" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">9</a>
+							</li>
+							<li class="p-[5px] text-(--color-mid-green)">
+                				<span>…</span>
+            				</li>
+            				<li>
+								<a href="?pg=11" class="filter-link text-(--color-brown) cursor-pointer rounded-sm border-1 p-[5px]">11</a>
+							</li>
+							<li>
+                				<a href="?pg=7"class="filter-link cursor-pointer rounded-sm border-1 p-[5px] text-(--color-brown)">Next</a>
+            				</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<footer class="px-4 pb-8 pt-8 md:grid md:grid-cols-[1fr_1fr] md:px-12 md:pt-12">
+		<div>
+			<a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" class="w-1/2 sm:w-1/3" /></a>
+			<ul class="social-icons flex gap-6 items-center mt-5 mb-5 md:mb-0">
+				<li><a href="#"><img src="assets/img/fb.svg" alt="Facebook"></a></li>
+				<li><a href="#"><img src="assets/img/linked-in.svg" alt="LinkedIn"></a></li>
+				<li><a href="#"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
+				<li><a href="#"><img src="assets/img/instagram.svg" alt="Instagram"></a></li>
+			</ul>
+		</div>
+		<div class="md:justify-self-end"><ul class="nav md:flex md:gap-x-24">
+					<li><a href="#">Recipes</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Shop</a></li>
+				</ul></div>
+	</footer>
+</body>
+</html>

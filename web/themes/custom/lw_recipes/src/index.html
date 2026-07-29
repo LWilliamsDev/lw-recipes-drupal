@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<a href="#main" class="skip-link sr-only">Skip to main content</a>
+	<header class="grid grid-cols-[3fr_1fr] md:grid-cols-[0.5fr_1fr] items-center px-4 py-8 md:px-12 md:py-8">
+		<div class="w-1/2 md:w-49"><a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" /></a></div>
+		<div class="md:hidden flex items-center justify-end">
+			<button aria-label="Toggle mobile menu" class="mobile-menu-icon px-[10px] w-auto cursor-pointer h-[24px]" id="toggle-mobile-menu" aria-controls="primary-nav" aria-expanded="false">
+				<img src="assets/img/mobile-menu-icon.svg" alt="Open mobile menu icon" class="mobile-menu-open">
+				<img src="assets/img/close.svg" alt="Close mobile menu icon" class="mobile-menu-close">
+			</button>
+			<button aria-label="Toggle search" id="search-btn-mobile" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer p-2">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search">
+			</button>
+		</div>
+		<div id="search-form" class="hidden row-start-2 col-span-full justify-self-end mt-0 relative z-1 p-0">
+			<form class="absolute -top-[9px] right-0 bg-(--color-tan) rounded-sm p-2 w-[241px] md:top-0">
+				<div class="search-form">
+					<input type="text" key="search" placeholder="Search... " class="rounded-sm border border-(--color-mid-green) border-solid p-2" id="search-input" />
+					<button type="submit" class="rounded-sm bg-(--color-brown) p-2 text-(--color-white) font-medium" id="search-submit">Go</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-span-full row-start-3 mt-[15px] md:row-start-1 md:col-start-2 md:justify-self-end md:flex">
+			<nav class="-mx-4 md:mx-0">
+				<ul class="nav hidden md:flex text-left md:gap-x-8" id="primary-nav">
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:relative md:hover:bg-(--color-tan) md:p-4 menu-item-has-children"><a href="#" class="px-4 inline-block md:px-0">Recipes</a> <button class="cursor-pointer ml-auto mr-4 open-toggle md:pointer-events-none md:mr-0" aria-label="Expand or collapse the Recipes submenu" id="toggle-recipes" aria-controls="recipes-submenu" aria-expanded="false"><img src="assets/img/expand.svg" alt="Expand the Recipes submenu" class="menu-expand" /><img src="assets/img/collapse.svg" alt="Collapse the Recipes submenu" class="menu-collapse"/></button>
+						<ul class="submenu pl-4 w-full md:p-1 md:absolute md:z-1 md:top-12 md:shadow-2xl md:rounded-sm md:w-max md:left-0" id="recipes-submenu">
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Paleo Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Keto Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Carb Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Fat Recipes</a></li>
+						</ul>
+					</li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4" ><a href="#" class="px-4 inline-block md:px-0">About</a></li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4"><a href="#" class="px-4 inline-block md:px-0">Shop</a></li>
+				</ul>
+			</nav>
+			<button aria-label="Toggle search" id="search-btn-desktop" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer hidden md:block p-4 ml-4">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search"></button>
+		</div>
+	</header>
+	<main id="main">
+		<section class="hero grid h-[358px] md:h-[717px]">
+			<div class="hero row-span-full col-span-full relative">
+				<img src="assets/img/home/hero-image.jpg" alt="Hero Image" class="col-span-full row-span-full absolute top-0 left-0 w-full h-full object-cover" />
+				<div class="bg-(--color-tan) block w-full h-full opacity-80 absolute left-0 top-0"></div>
+			</div>
+			<div class="row-span-full col-span-full relative z-2 text-center self-center">
+				<h1 class="font-roboto-condensed text-4xl md:text-6xl uppercase text-(--color-green) mb-[10px] md:mb-[20px]">Recipes for Healthy Lifestyles</h1>
+				<p class="text-color(--color-dark-green) text-sm md:text-2xl mb-[15px] md:mb-[20px]">Simple, wholesome recipes to fuel your journey to better health.</p>
+				<p class="hero-image__cta"><a href="#">Find Your Next Healthy Meal</a></p>
+			</div>
+		</section>
+		<section class="px-4 py-8 md:px-12 md:py-12">
+			<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">Latest Recipes</h2>
+			<div class="cards sm:grid sm:grid-cols-[1fr_1fr_1fr] sm:gap-x-5">
+				<div class="card mb-8">
+					<a href="#"><img src="assets/img/home/cake-pops.jpg" alt="Cake Pops" class="mb-5 w-full h-auto rounded-lg" /></a>
+					<h3 class="text-2xl font-medium text-(--color-brown)"><a href="#">Keto Cake Pops</a></h3>
+					<p class="text-(--color-dark-green)">Body text for whatever you'd like to add more to the subheading.</p>
+					<ul class="categories mt-5 flex flex-wrap gap-[10px]">
+						<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Paleo</a></li>
+						<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Low Carb</a></li>
+					</ul>
+				</div>
+				<div class="card mb-8">
+					<a href="#"><img src="assets/img/home/donuts.jpg" alt="Donuts" class="mb-5 w-full h-auto rounded-lg" /></a>
+					<h3 class="text-2xl font-medium text-(--color-brown)"><a href="#">Frosted Vanilla Donuts</a></h3>
+					<p class="text-(--color-dark-green)">Body text for whatever you'd like to add more to the subheading.</p>
+					<ul class="categories mt-5 flex flex-wrap gap-[10px]">
+						<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Paleo</a></li>
+						<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Low Carb</a></li>
+					</ul>
+				</div>
+				<div class="card">
+					<a href="#"><img src="assets/img/home/onion-rings.jpg" alt="Onion rings" class="mb-5 w-full h-auto rounded-lg" /></a>
+					<h3 class="text-2xl font-medium text-(--color-brown)"><a href="#">Keto Onion Rings</a></h3>
+					<p class="text-(--color-dark-green)">Body text for whatever you'd like to add more to the subheading.</p>
+					<ul class="categories mt-5 flex flex-wrap gap-[10px]">
+							<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Paleo</a></li>
+						<li><a href="#" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium">Low Carb</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="px-4 pt-8 md:px-12 md:pt-12">
+			<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">Browse by Diet</h2>
+			<div class="cards sm:grid sm:grid-cols-[1fr_1fr] sm:gap-x-5">
+				<div class="card mb-8">
+					<h3>
+						<a href="#" class="grid block">
+							<img src="assets/img/home/aip.jpg" alt="" class="w-full h-auto col-start-1 row-start-1 rounded-lg" />
+							<div class="bg-(--color-tan) col-start-1 row-start-1 opacity-90 self-end p-4">
+								<span class="text-2xl font-medium text-(--color-brown) hover:text-(--color-mid-green)">AIP</span>
+							</div>
+						</a>
+					</h3>
+				</div>
+				<div class="card mb-8">
+						<h3>
+						<a href="#" class="grid block">
+							<img src="assets/img/home/keto.jpg" alt="chicken avocado salad" class="w-full h-auto col-start-1 row-start-1 rounded-lg" />
+							<div class="bg-(--color-tan) col-start-1 row-start-1 opacity-90 self-end p-4">
+								<span class="text-2xl font-medium text-(--color-brown) hover:text-(--color-mid-green)">Keto</span>
+							</div>
+						</a>
+					</h3>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="px-4 pb-8 pt-8 md:grid md:grid-cols-[1fr_1fr] md:px-12 md:pt-12">
+		<div>
+			<a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" class="w-1/2 sm:w-1/3" /></a>
+			<ul class="social-icons flex gap-6 items-center mt-5 mb-5 md:mb-0">
+				<li><a href="#"><img src="assets/img/fb.svg" alt="Facebook"></a></li>
+				<li><a href="#"><img src="assets/img/linked-in.svg" alt="LinkedIn"></a></li>
+				<li><a href="#"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
+				<li><a href="#"><img src="assets/img/instagram.svg" alt="Instagram"></a></li>
+			</ul>
+		</div>
+		<div class="md:justify-self-end"><ul class="nav md:flex md:gap-x-24">
+					<li><a href="#">Recipes</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Shop</a></li>
+				</ul></div>
+	</footer>
+	<script type="text/javascript" src="assets/js/global-js.js" defer></script>
+</body>
+</html>

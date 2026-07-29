@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.recipe.ingredients_col1
     - field.field.node.recipe.ingredients_col2
     - field.field.node.recipe.instructions_col1
-    - field.field.node.recipe.instructions_col2
     - field.field.node.recipe.prep_time
     - field.field.node.recipe.protein
     - field.field.node.recipe.serves
@@ -32,6 +31,11 @@ content:
       link: true
     third_party_settings: {  }
     weight: 113
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   course:
     type: entity_reference_label
@@ -85,13 +89,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 110
-    region: content
-  instructions_col2:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 111
     region: content
   links:
     settings: {  }

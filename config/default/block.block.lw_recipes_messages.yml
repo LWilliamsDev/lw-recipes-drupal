@@ -1,0 +1,22 @@
+uuid: 8ffae4bf-17db-4e1a-9dc3-c1f04eb82993
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - lw_recipes
+_core:
+  default_config_hash: aeqlWs7HwctZeZC7ADcbxfqehJzBRfZKmuZz3DsH3_4
+id: lw_recipes_messages
+theme: lw_recipes
+region: main_menu
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

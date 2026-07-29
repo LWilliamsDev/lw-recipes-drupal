@@ -31,9 +31,12 @@ module:
   link_attributes_menu_link_content: 0
   linkit: 0
   linkit_attributes: 0
+  lw_recipes_core: 0
   media: 0
   media_library: 0
   media_responsive_thumbnail: 0
+  menu_link_content: 0
+  menu_ui: 0
   module_filter: 0
   mysql: 0
   node: 0
@@ -69,4 +72,5 @@ theme:
   stark: 0
   claro: 0
   gin: 0
+  lw_recipes: 0
 profile: minimal

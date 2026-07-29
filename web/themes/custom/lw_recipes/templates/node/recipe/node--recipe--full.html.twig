@@ -1,0 +1,85 @@
+{% set image = content.hero_image %}
+{% set excerpt = content.excerpt %}
+{% set diet = content.diet %}
+{% set course = content.course %}
+{% set serves = content.serves|render %}
+{% set prep_time = content.prep_time|render %}
+{% set total_time = content.total_time|render %}
+{% set ingredients_col1 = content.ingredients_col1 %}
+{% set ingredients_col2 = content.ingredients_col2|render %}
+{% set instructions = content.instructions_col1 %}
+{% set related_recipes = node.getRelatedRecipes() %}
+{% set prev = node.getPreviousRecipe() %}
+{% set next = node.getNextRecipe() %}
+
+
+<article class="px-4 pb-8 md:px-12 md:pb-12">
+	<div class="w-3/4">
+        {% if breadcrumbs %}
+		<div class="mb-[10px] md:mb-[20px] pt-[5px] border-t border-solid border-(--color-mid-green)">
+			<ul class="flex flex-wrap breadcrumbs gap-[10px]">
+                {% for breadcrumb in breadcrumbs %}
+                    <li><a href="{{ breadcrumb.url}}">{{ breadcrumb.text }}</a></li>
+                {% endfor %}
+			</ul>
+	    </div>
+        {% endif %}
+	    <div class="mb-[20px]">
+		    <h1 class="font-roboto-condensed mb-[5px] text-3xl md:mb-[10px] md:text-5xl uppercase text-(--color-green)">{{ node.label }}</h1>
+		    <div class="text-base md:text-2xl text-(--color-brown)">{{ excerpt }}</div>
+	    </div>
+	    <div class="mb-[20px] md:mb-[30px]">
+            <div class="recipe__hero">
+                {{ image }}
+        </div>
+	</div>
+    {% if serves or prep_time or total_time %}
+	    <ul class="flex flex-wrap gap-[10px] text-(--color-dark-green)">
+		    {% if serves %}<li><span class="text-(--color-brown)"><strong>{{'Serves:'|t }}</strong></span> {{ serves }}</li>{% endif %}
+		    {% if prep_time %}<li><span class="text-(--color-brown)"><strong>{{'Prep Time:'|t}}</strong></span> {{ prep_time }}</li>{% endif %}
+		    {% if total_time %}<li><span class="text-(--color-brown)"><strong>{{'Total Time:'|t}}</strong></span> {{ total_time }}</li>{% endif %}
+	    </ul>
+    {% endif %}
+	{% if ingredients_col2 %}
+        {% include '@lw_recipes/includes/recipe-complicated.html.twig' with {
+            ingredients_col1: ingredients_col1,
+            ingredients_col2: ingredients_col2,
+            instructions: instructions
+        } %}
+    {% else %}
+         {% include '@lw_recipes/includes/recipe-simple.html.twig' with {
+            ingredients_col1: ingredients_col1,
+            instructions: instructions
+        } %}
+    {% endif %}
+</article>
+{% if prev or next %}
+    <aside class="px-4 md:px-12">
+	    <div class="w-3/4 border-t border-b border-solid border-(--color-mid-green)">
+            {% if not prev %}
+                {% set classes = 'flex flex-wrap justify-end pt-2 pb-2' %}
+            {% else %}
+                {% set classes = 'flex flex-wrap justify-between pt-2 pb-2' %}
+            {% endif %}
+		    <ul class="{{ classes }}">
+                 {% if prev %} 
+                    <li><a href="{{ prev['#url'] }}">{{'&laquo; Previous'|t}}</a></li>
+                 {% endif %}
+                 {% if next %}
+                     <li><a href="{{ next['#url'] }}">{{'Next &raquo;'|t}}</a></li>
+                 {% endif %}
+		    </ul>
+	    </div>
+    </aside>
+{% endif %}
+
+{% if related_recipes %}
+    <aside class="px-4 pt-8 md:px-12 md:pt-12">
+	    <div class="w-3/4">
+		    <h2 class="text-3xl font-roboto-condensed uppercase text-(--color-green) mb-[10px]">{{'You Might Also Like'|t}}</h2>
+			    <ul class="md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-x-5">
+                    {{ related_recipes }}
+			    </ul>
+	    </div>
+    </aside>
+{% endif %}

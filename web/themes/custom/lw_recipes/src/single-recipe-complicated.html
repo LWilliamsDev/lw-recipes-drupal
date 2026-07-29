@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<a href="#main" class="skip-link sr-only">Skip to main content</a>
+	<header class="grid grid-cols-[3fr_1fr] md:grid-cols-[0.5fr_1fr] items-center px-4 py-8 md:px-12 md:py-8">
+		<div class="w-1/2 md:w-49"><a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" /></a></div>
+		<div class="md:hidden flex items-center justify-end">
+			<button aria-label="Toggle mobile menu" class="mobile-menu-icon px-[10px] w-auto cursor-pointer h-[24px]" id="toggle-mobile-menu" aria-controls="primary-nav" aria-expanded="false">
+				<img src="assets/img/mobile-menu-icon.svg" alt="Open mobile menu icon" class="mobile-menu-open">
+				<img src="assets/img/close.svg" alt="Close mobile menu icon" class="mobile-menu-close">
+			</button>
+			<button aria-label="Toggle search" id="search-btn-mobile" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer p-2">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search">
+			</button>
+		</div>
+		<div id="search-form" class="hidden row-start-2 col-span-full justify-self-end mt-0 relative z-1 p-0">
+			<form class="absolute -top-[9px] right-0 bg-(--color-tan) rounded-sm p-2 w-[241px] md:top-0">
+				<div class="search-form">
+					<input type="text" key="search" placeholder="Search... " class="rounded-sm border border-(--color-mid-green) border-solid p-2" id="search-input" />
+					<button type="submit" class="rounded-sm bg-(--color-brown) p-2 text-(--color-white) font-medium" id="search-submit">Go</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-span-full row-start-3 mt-[15px] md:row-start-1 md:col-start-2 md:justify-self-end md:flex">
+			<nav class="-mx-4 md:mx-0">
+				<ul class="nav hidden md:flex text-left md:gap-x-8" id="primary-nav">
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:relative md:hover:bg-(--color-tan) md:p-4 menu-item-has-children"><a href="#" class="px-4 inline-block md:px-0">Recipes</a> <button class="cursor-pointer ml-auto mr-4 open-toggle md:pointer-events-none md:mr-0" aria-label="Expand or collapse the Recipes submenu" id="toggle-recipes" aria-controls="recipes-submenu" aria-expanded="false"><img src="assets/img/expand.svg" alt="Expand the Recipes submenu" class="menu-expand" /><img src="assets/img/collapse.svg" alt="Collapse the Recipes submenu" class="menu-collapse"/></button>
+						<ul class="submenu pl-4 w-full md:p-1 md:absolute md:z-1 md:top-12 md:shadow-2xl md:rounded-sm md:w-max md:left-0" id="recipes-submenu">
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Paleo Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4 md:py-5">Keto Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Carb Recipes</a></li>
+							<li class="py-1 md:py-2"><a href="#" class="px-4">Low Fat Recipes</a></li>
+						</ul>
+					</li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4" ><a href="#" class="px-4 inline-block md:px-0">About</a></li>
+					<li class="py-1 flex flex-wrap border-b border-solid border-(--color-mid-green) md:border-b-0 md:p-4"><a href="#" class="px-4 inline-block md:px-0">Shop</a></li>
+				</ul>
+			</nav>
+			<button aria-label="Toggle search" id="search-btn-desktop" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer hidden md:block p-4 ml-4">
+				<img src="assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="assets/img/close.svg" alt="Close search icon" class="close-search"></button>
+		</div>
+	</header>
+	<main id="main">
+		<article class="px-4 pb-8 md:px-12 md:pb-12">
+			<div class="w-3/4">
+				<div class="mb-[10px] md:mb-[20px] pt-[5px] border-t border-solid border-(--color-mid-green)">
+					<ul class="flex flex-wrap breadcrumbs gap-[10px]">
+						<li><a href="#">Recipes</a></li>
+						<li><a href="#">Entrees</a></li>
+						<li><a href="#">Keto</a></li>
+					</ul>
+				</div>
+				<div class="mb-[20px]">
+					<h1 class="font-roboto-condensed mb-[5px] text-3xl md:mb-[10px] md:text-5xl uppercase text-(--color-green)">Lemon Blueberry Scones</h1>
+					<p class="text-base md:text-2xl text-(--color-brown)">These lemon blueberry scones are perfectly flaky with rich buttery flavor plus fresh lemon and sweet juicy blueberries.  The lemon icing makes them out of this world delicious!  The perfect healthier brunch treat, these scones are paleo, dairy free, gluten free and irresistible!</p>
+				</div>
+				<div class="mb-[20px] md:mb-[30px]">
+					<img src="assets/img/recipe-single/complicated.jpg" alt="Scones" class="w-full rounded-lg">
+				</div>
+				<ul class="flex flex-wrap gap-[10px] text-(--color-dark-green)">
+					<li><span class="text-(--color-brown)"><strong>Serves:</strong></span> 6</li>
+					<li><span class="text-(--color-brown)"><strong>Prep Time:</strong></span> 20 mins</li>
+					<li><span class="text-(--color-brown)"><strong>Total Time:</strong></span> 30 mins</li>
+				</ul>
+				<div class="mt-[30px] mb-[30px] text-(--color-dark-green) recipe__complex">
+					<div class="mb-[30px]">
+						<h2 class="text-3xl font-roboto-condensed uppercase text-(--color-green)">Ingredients</h2>
+						<div class="md:grid gap-x-5 md:grid-cols-[1fr_1fr] md:gap-y-5">
+							<div>
+								<h3>Scones</h3>
+								<ul>
+									<li>2 cups blanched almond flour</li>
+									<li>3/4 cup tapioca flour plus a bit more to dust the dough</li>
+									<li>1/4 cup coconut flour</li>
+									<li>1 1/2 teaspoon aluminum free baking powder</li>
+									<li>1/2 teaspoon baking soda</li>
+									<li>1/2 teaspoon fine sea salt</li>
+									<li>1 tablespoon grated lemon zest from about one large lemon</li>
+									<li>1/2 cup pure maple sugar or coconut sugar</li>
+									<li>1/2 cup ghee or grass-fed butter or palm shortening, chilled, cut or broken into pieces</li>
+									<li>6 tablespoon milk of your choice (dairy free or dairy)</li>
+									<li>1 teaspoon pure vanilla extract</li>
+									<li>1/2 teaspoon almond extract</li>
+									<li>1 large egg</li>
+									<li>1 cup fresh blueberries</li>
+								</ul>
+							</div>
+							<div>
+								<h3>Lemon Icing</h3>
+								<ul>
+									<li>1/2 cup organic powdered sugar or monk fruit sweetener</li>
+									<li>1 tablespoon fresh lemon juice</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h2 class="text-3xl font-roboto-condensed uppercase text-(--color-green)">Instructions</h2>
+						<h3 class="font-semibold text-(--color-brown) text-lg">Scones</h3>
+						<ol>
+							<li>In a large bowl, stir together the almond flour, tapioca flour and coconut flour plus the baking powder, baking soda, salt, lemon zest and the maple or coconut sugar.</li>
+							<li>Add the cold butter (or ghee or shortening) in pieces, and use a pastry blender to cut it into the dry mixture until it resembles coarse crumbs. This can also be done by pulsing a few times in a food processor.</li>
+							<li>Make a well in the center of the mixture and add the milk, almond extract and egg. Stir well until no flour spots show - the dough will be sticky.</li>
+							<li>Gently fold in the blueberries, then place the bowl in the freezer to chill for 20-30 minutes.</li>
+							<li>Meanwhile, preheat your oven to 400° and line a large baking sheet with parchment paper. Sprinkle lightly with tapioca.</li>
+							<li>After chilling the dough, place it on top of the parchment. Sprinkle lightly with a bit more tapioca and work the dough into a disk about 7”. Using a very sharp knife, cut the dough into 8 triangular wedges. If it becomes too wet or sticky to work with at any point, place the whole baking sheet in the fridge or freezer to firm it up.</li>
+							<li>Using a rubber spatula or your hands, carefully separate the wedges and place them 2” apart on the on the baking sheet. Place the entire baking sheet in the refrigerator or freezer for another 10-15 minutes. This helps the scones keep their shape while baking.</li>
+							<li>Store the scones loosely covered at room temperature for one day, or wrap tightly and freeze them after cooling to keep longer. Enjoy!</li>
+							<li>Bake in the preheated oven for 16-18 minutes or until set and golden brown.</li>
+						</ol>
+						<h3 class="font-semibold text-(--color-brown) text-lg">Frosting</h3>
+						<ol>
+							<li>Whisk together the powdered sugar and lemon juice until a smooth drizzle forms.</li>
+							 <li>Drizzle it over the warm scones (after partially cooling) and serve warm or room temperature.</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</article>
+		<aside class="px-4 md:px-12">
+			<div class="w-3/4 border-t border-b border-solid border-(--color-mid-green)">
+				<ul class="flex flex-wrap justify-between pt-2 pb-2">
+					<li><a href="#">&laquo; Previous</a></li>
+					<li><a href="#">Next &raquo;</a></li>
+				</ul>
+			</div>
+		</aside>
+		<aside class="px-4 pt-8 md:px-12 md:pt-12">
+			<div class="w-3/4">
+				<h2 class="text-3xl font-roboto-condensed uppercase text-(--color-green) mb-[10px]">You Might Also Like</h2>
+				<ul class="md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-x-5">
+					<li class="mb-5 md:mb-0">
+						<a href="#">
+							<img src="assets/img/home/cake-pops.jpg" class="w-full rounded-lg">
+							<h3 class="text-xl font-medium mt-2">Recipe 1</h3>
+						</a>
+					</li>
+					<li class="mb-5 md:mb-0">
+						<a href="#">
+							<img src="assets/img/home/donuts.jpg" class="w-full rounded-lg">
+							<h3 class="text-xl font-medium mt-2">Recipe 2</h3>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="assets/img/home/onion-rings.jpg" class="w-full rounded-lg">
+							<h3 class="text-xl font-medium mt-2">Recipe 3</h3>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</main>
+	<footer class="px-4 pb-8 pt-8 md:grid md:grid-cols-[1fr_1fr] md:px-12 md:pt-12">
+		<div>
+			<a href="#"><img src="assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" class="w-1/2 sm:w-1/3" /></a>
+			<ul class="social-icons flex gap-6 items-center mt-5 mb-5 md:mb-0">
+				<li><a href="#"><img src="assets/img/fb.svg" alt="Facebook"></a></li>
+				<li><a href="#"><img src="assets/img/linked-in.svg" alt="LinkedIn"></a></li>
+				<li><a href="#"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
+				<li><a href="#"><img src="assets/img/instagram.svg" alt="Instagram"></a></li>
+			</ul>
+		</div>
+		<div class="md:justify-self-end"><ul class="nav md:flex md:gap-x-24">
+					<li><a href="#">Recipes</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Shop</a></li>
+				</ul></div>
+	</footer>
+	<script type="text/javascript" src="assets/js/global-js.js" defer></script>
+</body>
+</html>

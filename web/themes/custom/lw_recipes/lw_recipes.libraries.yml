@@ -1,0 +1,6 @@
+global:
+  css:
+    theme:
+      assets/css/style.css: {}
+  js:
+    assets/js/global.js: { minified: true }

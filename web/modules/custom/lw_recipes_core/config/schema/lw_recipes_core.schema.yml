@@ -1,0 +1,7 @@
+lw_recipes.settings:
+  type: config_object
+  label: 'LW Recipes settings'
+  mapping:
+    recipe_listing_page:
+      type: integer
+      label: 'Recipe listing page'

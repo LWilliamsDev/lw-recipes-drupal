@@ -12,7 +12,7 @@ id: node.recipe.instructions_col1
 field_name: instructions_col1
 entity_type: node
 bundle: recipe
-label: 'Instructions (Column 1)'
+label: Instructions
 description: ''
 required: true
 translatable: false

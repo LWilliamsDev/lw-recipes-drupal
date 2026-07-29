@@ -1,0 +1,16 @@
+services:
+  lw_recipes.settings:
+    class: Drupal\lw_recipes_core\Service\RecipeSettings
+    arguments:
+      - '@config.factory'
+      - '@entity_type.manager'
+  lw_recipes_core.recipe_breadcrumbs:
+    class: Drupal\lw_recipes_core\Service\RecipeBreadcrumbs
+    arguments:
+      - '@lw_recipes.settings'
+  lw_recipes_core.related_recipes:
+    class: Drupal\lw_recipes_core\Service\RelatedRecipes
+  lw_recipes_core.post_nav:
+    class: Drupal\lw_recipes_core\Service\RecipePostNav
+    arguments:
+      - '@entity_type.manager'

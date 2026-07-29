@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.recipe.ingredients_col1
     - field.field.node.recipe.ingredients_col2
     - field.field.node.recipe.instructions_col1
-    - field.field.node.recipe.instructions_col2
     - field.field.node.recipe.prep_time
     - field.field.node.recipe.protein
     - field.field.node.recipe.serves
@@ -61,7 +60,6 @@ hidden:
   ingredients_col1: true
   ingredients_col2: true
   instructions_col1: true
-  instructions_col2: true
   links: true
   prep_time: true
   protein: true

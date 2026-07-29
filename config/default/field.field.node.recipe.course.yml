@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.course
     - node.type.recipe
-    - taxonomy.vocabulary.diet
+    - taxonomy.vocabulary.course
 id: node.recipe.course
 field_name: course
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      diet: diet
+      course: course
     sort:
       field: name
       direction: asc

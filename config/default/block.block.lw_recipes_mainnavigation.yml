@@ -1,0 +1,25 @@
+uuid: 7c3c8508-e9be-4cc5-90d9-80252c475d85
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - lw_recipes
+id: lw_recipes_mainnavigation
+theme: lw_recipes
+region: main_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

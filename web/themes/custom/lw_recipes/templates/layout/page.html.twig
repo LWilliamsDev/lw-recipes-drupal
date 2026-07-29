@@ -1,0 +1,29 @@
+<header class="grid grid-cols-[3fr_1fr] md:grid-cols-[0.5fr_1fr] items-center px-4 py-8 md:px-12 md:py-8">
+		<div class="w-1/2 md:w-49"><a href="/"><img src="{{ base_path ~ directory }}/assets/img/recipes-logo.svg" alt="Fit & Flavor Logo" /></a></div>
+		<div class="md:hidden flex items-center justify-end">
+			<button aria-label="Toggle mobile menu" class="mobile-menu-icon px-[10px] w-auto cursor-pointer h-[24px]" id="toggle-mobile-menu" aria-controls="primary-nav" aria-expanded="false">
+				<img src="{{ base_path ~ directory }}/assets/img/mobile-menu-icon.svg" alt="Open mobile menu icon" class="mobile-menu-open">
+				<img src="{{ base_path ~ directory }}/assets/img/close.svg" alt="Close mobile menu icon" class="mobile-menu-close">
+			</button>
+			<button aria-label="Toggle search" id="search-btn-mobile" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer p-2">
+				<img src="{{ base_path ~ directory }}/assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="{{ base_path ~ directory }}/assets/img/close.svg" alt="Close search icon" class="close-search">
+			</button>
+		</div>
+		<div id="search-form" class="hidden row-start-2 col-span-full justify-self-end mt-0 relative z-1 p-0">
+			{{ page.search }}
+		</div>
+		<div class="col-span-full row-start-3 mt-[15px] md:row-start-1 md:col-start-2 md:justify-self-end md:flex">
+			{{ page.main_menu }}
+			<button aria-label="Toggle search" id="search-btn-desktop" aria-controls="search-form" aria-expanded="false" class="search-btn cursor-pointer hidden md:block p-4 ml-4">
+				<img src="{{ base_path ~ directory }}/assets/img/search-icon.svg" alt="Open Search icon" class="w-[24px] h-[24px] open-search">
+				<img src="{{ base_path ~ directory }}/assets/img/close.svg" alt="Close search icon" class="close-search"></button>
+		</div>
+	</header>
+
+    <main id="main">
+        {{ page.content }}
+    </main>
+    <footer class="px-4 pb-8 pt-8 md:grid md:grid-cols-[1fr_1fr] md:px-12 md:pt-12">
+        {{ page.footer }}
+	</footer>

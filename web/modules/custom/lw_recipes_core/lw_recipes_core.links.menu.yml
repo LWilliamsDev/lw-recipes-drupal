@@ -1,0 +1,5 @@
+lw_recipes.settings:
+  title: 'Recipe settings'
+  description: 'Configure recipe listing settings.'
+  route_name: lw_recipes.settings
+  parent: system.admin_config_content

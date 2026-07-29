@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.recipe.ingredients_col1
     - field.field.node.recipe.ingredients_col2
     - field.field.node.recipe.instructions_col1
-    - field.field.node.recipe.instructions_col2
     - field.field.node.recipe.prep_time
     - field.field.node.recipe.protein
     - field.field.node.recipe.serves
@@ -28,29 +27,19 @@ targetEntityType: node
 bundle: recipe
 mode: full
 content:
-  allergen:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   course:
-    type: entity_reference_label
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  diet:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  diet:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
     region: content
   excerpt:
     type: text_default
@@ -91,13 +80,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  instructions_col2:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
-    region: content
   prep_time:
     type: string
     label: hidden
@@ -106,14 +88,6 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 3
-    region: content
-  protein:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
     region: content
   serves:
     type: string
@@ -134,5 +108,7 @@ content:
     weight: 4
     region: content
 hidden:
+  allergen: true
   content_moderation_control: true
   links: true
+  protein: true
