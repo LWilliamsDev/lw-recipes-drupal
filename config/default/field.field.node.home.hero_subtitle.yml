@@ -1,0 +1,19 @@
+uuid: 51ac1072-15db-4393-acfd-8c96b079366d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.hero_subtitle
+    - node.type.home
+id: node.home.hero_subtitle
+field_name: hero_subtitle
+entity_type: node
+bundle: home
+label: 'Hero Subtitle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

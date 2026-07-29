@@ -1,0 +1,19 @@
+uuid: 751f6191-523a-4e28-98bf-b3d9bcdc02bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.hero_title
+    - node.type.home
+id: node.home.hero_title
+field_name: hero_title
+entity_type: node
+bundle: home
+label: 'Hero Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

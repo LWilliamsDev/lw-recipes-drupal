@@ -1,0 +1,11 @@
+uuid: 697f91bc-4669-4aa8-a002-cc9e30202c31
+langcode: en
+status: true
+dependencies: {  }
+name: Recipe
+type: recipe
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

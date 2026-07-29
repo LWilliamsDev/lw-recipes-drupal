@@ -1,0 +1,14 @@
+uuid: 9afa8164-573a-42f3-b132-3a9452b175cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.protein
+id: taxonomy_vocabulary_protein
+entity_type_id: taxonomy_vocabulary
+entity_id: protein
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

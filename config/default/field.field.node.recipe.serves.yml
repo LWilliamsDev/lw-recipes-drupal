@@ -1,0 +1,19 @@
+uuid: 0a2a9c4f-21f0-45fd-8c7a-c514eab02704
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.serves
+    - node.type.recipe
+id: node.recipe.serves
+field_name: serves
+entity_type: node
+bundle: recipe
+label: Serves
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

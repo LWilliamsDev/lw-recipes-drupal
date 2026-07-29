@@ -1,0 +1,24 @@
+uuid: e38489d8-696b-4b71-886f-a4f09525771c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.instructions_col2
+    - filter.format.plain_text
+    - node.type.recipe
+  module:
+    - text
+id: node.recipe.instructions_col2
+field_name: instructions_col2
+entity_type: node
+bundle: recipe
+label: 'Instructions (Column 2)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

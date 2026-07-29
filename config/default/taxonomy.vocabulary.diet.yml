@@ -1,0 +1,9 @@
+uuid: 79d93fe6-3e2d-4cd8-94d4-c5de81ffbcb3
+langcode: en
+status: true
+dependencies: {  }
+name: Diet
+vid: diet
+description: null
+weight: 0
+new_revision: false

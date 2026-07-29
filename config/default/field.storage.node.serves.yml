@@ -1,0 +1,21 @@
+uuid: f0ad2593-9126-4d23-8b27-6747ed2dffaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.serves
+field_name: serves
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

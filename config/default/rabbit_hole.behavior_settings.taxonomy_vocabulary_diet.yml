@@ -1,0 +1,14 @@
+uuid: 95b30e38-f1d7-430b-b066-f11f04edda4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.diet
+id: taxonomy_vocabulary_diet
+entity_type_id: taxonomy_vocabulary
+entity_id: diet
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

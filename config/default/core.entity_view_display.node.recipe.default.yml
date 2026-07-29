@@ -1,0 +1,136 @@
+uuid: 14e0b103-24cb-4be5-9fe4-c4d9267e101f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.allergen
+    - field.field.node.recipe.course
+    - field.field.node.recipe.diet
+    - field.field.node.recipe.excerpt
+    - field.field.node.recipe.hero_image
+    - field.field.node.recipe.ingredients_col1
+    - field.field.node.recipe.ingredients_col2
+    - field.field.node.recipe.instructions_col1
+    - field.field.node.recipe.instructions_col2
+    - field.field.node.recipe.prep_time
+    - field.field.node.recipe.protein
+    - field.field.node.recipe.serves
+    - field.field.node.recipe.total_time
+    - node.type.recipe
+  module:
+    - text
+    - user
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  allergen:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  course:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  diet:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  excerpt:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  hero_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  ingredients_col1:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  ingredients_col2:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  instructions_col1:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  instructions_col2:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  prep_time:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  protein:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  serves:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  total_time:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 107
+    region: content
+hidden: {  }

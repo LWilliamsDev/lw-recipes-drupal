@@ -1,0 +1,24 @@
+uuid: 5ea2db8f-1f13-44be-b8f3-f22d187300e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.excerpt
+    - filter.format.plain_text
+    - node.type.recipe
+  module:
+    - text
+id: node.recipe.excerpt
+field_name: excerpt
+entity_type: node
+bundle: recipe
+label: Excerpt
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

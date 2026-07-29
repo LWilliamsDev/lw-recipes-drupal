@@ -1,0 +1,29 @@
+uuid: 361a4db5-76bb-4aa7-99c6-6bf59c27f3e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.allergen
+    - node.type.recipe
+    - taxonomy.vocabulary.allergen
+id: node.recipe.allergen
+field_name: allergen
+entity_type: node
+bundle: recipe
+label: Allergen
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      allergen: allergen
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

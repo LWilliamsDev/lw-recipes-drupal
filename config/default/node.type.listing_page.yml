@@ -1,0 +1,11 @@
+uuid: 66727a66-63bb-4b6a-ae9a-7000517d744f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Listing Page'
+type: listing_page
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

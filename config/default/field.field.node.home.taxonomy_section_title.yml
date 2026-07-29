@@ -1,0 +1,19 @@
+uuid: 053e5f41-671a-4117-a6b6-010a87e794ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.taxonomy_section_title
+    - node.type.home
+id: node.home.taxonomy_section_title
+field_name: taxonomy_section_title
+entity_type: node
+bundle: home
+label: 'Taxonomy Section Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

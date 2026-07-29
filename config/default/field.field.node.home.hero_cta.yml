@@ -1,0 +1,23 @@
+uuid: aa7b1cb7-0bce-4a07-ae88-c6feea1e984a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.hero_cta
+    - node.type.home
+  module:
+    - link
+id: node.home.hero_cta
+field_name: hero_cta
+entity_type: node
+bundle: home
+label: 'Hero CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

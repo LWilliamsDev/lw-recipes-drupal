@@ -1,0 +1,19 @@
+uuid: 4c6bd243-c328-4b6b-8409-c54fc26d8a9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.latest_recipes_title
+    - node.type.home
+id: node.home.latest_recipes_title
+field_name: latest_recipes_title
+entity_type: node
+bundle: home
+label: 'Latest Recipes Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

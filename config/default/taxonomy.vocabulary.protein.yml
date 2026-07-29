@@ -1,0 +1,9 @@
+uuid: afe68b46-b628-4a42-a1d5-61e8b9c4dc75
+langcode: en
+status: true
+dependencies: {  }
+name: Protein
+vid: protein
+description: null
+weight: 0
+new_revision: false

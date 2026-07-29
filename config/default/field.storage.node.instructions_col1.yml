@@ -1,0 +1,19 @@
+uuid: c3a48b3e-d032-400a-b6bd-24667fb3acdc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.instructions_col1
+field_name: instructions_col1
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

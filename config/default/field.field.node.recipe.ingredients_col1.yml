@@ -1,0 +1,24 @@
+uuid: cc6b34b5-b713-46e3-8a10-c2279cbcc697
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.ingredients_col1
+    - filter.format.plain_text
+    - node.type.recipe
+  module:
+    - text
+id: node.recipe.ingredients_col1
+field_name: ingredients_col1
+entity_type: node
+bundle: recipe
+label: 'Ingredients (Column 1)'
+description: 'The first column of ingredients.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long

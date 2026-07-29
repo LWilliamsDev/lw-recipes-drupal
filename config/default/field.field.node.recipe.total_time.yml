@@ -1,0 +1,19 @@
+uuid: b7298646-1734-43f2-8837-10ed9620e526
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.total_time
+    - node.type.recipe
+id: node.recipe.total_time
+field_name: total_time
+entity_type: node
+bundle: recipe
+label: 'Total Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

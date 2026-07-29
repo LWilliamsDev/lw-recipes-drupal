@@ -1,0 +1,31 @@
+uuid: e40b460f-ae07-43ea-90e7-280c2b7f1574
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.diet.image
+    - taxonomy.vocabulary.diet
+  module:
+    - text
+id: taxonomy_term.diet.default
+targetEntityType: taxonomy_term
+bundle: diet
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

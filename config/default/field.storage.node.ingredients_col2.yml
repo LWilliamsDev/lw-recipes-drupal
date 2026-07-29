@@ -1,0 +1,19 @@
+uuid: 76b04231-245c-47fb-ab60-ae998a129d70
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.ingredients_col2
+field_name: ingredients_col2
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

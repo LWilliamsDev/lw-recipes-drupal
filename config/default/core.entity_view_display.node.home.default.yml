@@ -1,0 +1,83 @@
+uuid: 2d147c37-241d-4ea1-bb11-605368df3aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.home.hero_cta
+    - field.field.node.home.hero_image
+    - field.field.node.home.hero_subtitle
+    - field.field.node.home.hero_title
+    - field.field.node.home.latest_recipes_title
+    - field.field.node.home.taxonomy_section_title
+    - node.type.home
+  module:
+    - link
+    - user
+id: node.home.default
+targetEntityType: node
+bundle: home
+mode: default
+content:
+  hero_cta:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  hero_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  hero_subtitle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  hero_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  latest_recipes_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  taxonomy_section_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 106
+    region: content
+hidden: {  }

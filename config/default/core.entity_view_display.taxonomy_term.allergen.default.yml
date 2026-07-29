@@ -1,0 +1,31 @@
+uuid: e71f2328-c47d-470e-9ef8-5d41a3e22d50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.allergen.image
+    - taxonomy.vocabulary.allergen
+  module:
+    - text
+id: taxonomy_term.allergen.default
+targetEntityType: taxonomy_term
+bundle: allergen
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,29 @@
+uuid: 5a890d96-0ecd-43cf-85ae-8371c73b568d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.image
+    - media.type.image
+    - taxonomy.vocabulary.allergen
+id: taxonomy_term.allergen.image
+field_name: image
+entity_type: taxonomy_term
+bundle: allergen
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
