@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.basic_page
     - node.type.home
     - node.type.listing_page
     - node.type.recipe
@@ -64,6 +65,7 @@ type_settings:
       weight: 2
   entity_types:
     node:
+      - basic_page
       - home
       - listing_page
       - recipe
