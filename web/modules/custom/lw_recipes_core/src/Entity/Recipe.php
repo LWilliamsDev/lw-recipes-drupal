@@ -18,8 +18,8 @@ class Recipe extends Node {
 
   public function getRelatedRecipes(): array {
   
-    $viewBuilder = \Drupal::service('lw_recipes_core.related_recipes');
-    return $viewBuilder->build($this);
+    $viewBuilder = \Drupal::service('lw_recipes_core.recipe_view_builder');
+    return $viewBuilder->buildRelated($this);
   }
 
   protected function getNavigationService() {
@@ -61,6 +61,10 @@ public function getNextRecipe(): array|null {
       'tags' => ['node_list:recipe'],
     ],
   ];
+}
+
+public function getRecipeTermLink(Recipe $recipe, $fieldName): array {
+  return \Drupal::service('lw_recipes_core.recipe_links')->getRecipeTermLink($this, $fieldName);
 }
 
 }

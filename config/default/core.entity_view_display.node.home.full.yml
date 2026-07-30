@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.home.hero_subtitle
     - field.field.node.home.hero_title
     - field.field.node.home.latest_recipes_title
+    - field.field.node.home.taxonomy
     - field.field.node.home.taxonomy_section_title
     - node.type.home
     - responsive_image.styles.hero_image
@@ -70,6 +71,14 @@ content:
       link_rel: canonical
     third_party_settings: {  }
     weight: 4
+    region: content
+  taxonomy:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   taxonomy_section_title:
     type: string

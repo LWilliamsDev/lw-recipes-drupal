@@ -3,8 +3,7 @@
 
 @import "tailwindcss";
 @source "../../*.html";
-@source "../../../../../mu-plugins/recipes/recipe-search/src"
-@source "../../../views";
+@source "../../../templates";
 
 
 @theme {
@@ -213,6 +212,15 @@ header nav li.active .menu-expand {
 /* Drupal Overrides, because we cannot directly add classes to some elements without causing bigger problems */
 .recipe__hero img {
   @apply w-full rounded-lg;
+}
+.home__hero img {
+  @apply col-span-full row-span-full absolute top-0 left-0 w-full h-full object-cover;
+}
+.recipe__latest img {
+  @apply mb-5 w-full h-auto rounded-lg;
+}
+.recipe-taxonomy__image img {
+  @apply w-full h-auto rounded-lg;
 }
 
 /* Media Queries */

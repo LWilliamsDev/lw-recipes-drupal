@@ -4,12 +4,14 @@ services:
     arguments:
       - '@config.factory'
       - '@entity_type.manager'
-  lw_recipes_core.recipe_breadcrumbs:
-    class: Drupal\lw_recipes_core\Service\RecipeBreadcrumbs
+  lw_recipes_core.recipe_links:
+    class: Drupal\lw_recipes_core\Service\RecipeLinks
     arguments:
       - '@lw_recipes.settings'
-  lw_recipes_core.related_recipes:
-    class: Drupal\lw_recipes_core\Service\RelatedRecipes
+  lw_recipes_core.recipe_view_builder:
+    class: Drupal\lw_recipes_core\Service\RecipeViewBuilder
+    arguments:
+      - '@entity_type.manager'
   lw_recipes_core.post_nav:
     class: Drupal\lw_recipes_core\Service\RecipePostNav
     arguments:

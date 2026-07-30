@@ -4,51 +4,53 @@
 {% set hero_title = content.hero_title %}
 {% set hero_cta = content.hero_cta|render %}
 {% set latest_recipes_title = content.latest_recipes_title|render %}
+{% set latest_recipes = node.getLatestRecipes() %}
+{% set taxonomy = content.taxonomy|render %}
 {% set taxonomy_section_title = content.taxonomy_section_title|render %}
+{% set taxonomy_section = node.getTaxonomyTerms() %}
 
 <section class="hero grid h-[358px] md:h-[717px]">
 	<div class="hero row-span-full col-span-full relative">
-		{{ hero_image }}
+		<div class="home__hero">
+			{{ hero_image }}
+		</div>
 		{#<img src="assets/img/home/hero-image.jpg" alt="Hero Image" class="col-span-full row-span-full absolute top-0 left-0 w-full h-full object-cover" />#}
 		<div class="bg-(--color-tan) block w-full h-full opacity-80 absolute left-0 top-0"></div>
 	</div>
 	<div class="row-span-full col-span-full relative z-2 text-center self-center">
 		<h1 class="font-roboto-condensed text-4xl md:text-6xl uppercase text-(--color-green) mb-[10px] md:mb-[20px]">{{ hero_title }}</h1>
 		{% if hero_subtitle %}
-			<p class="text-color(--color-dark-green) text-sm md:text-2xl mb-[15px] md:mb-[20px]">{{ hero_subtitle }}</p>
+			<div class="text-color(--color-dark-green) text-sm md:text-2xl mb-[15px] md:mb-[20px]">{{ hero_subtitle }}</div>
 		{% endif %}
 
 		{% if hero_cta %}
-		{#<p class="hero-image__cta"><a href="#">Find Your Next Healthy Meal</a></p>#}
-			{{ hero_cta }}
+		<div class="hero-image__cta">{{ hero_cta }}</div>
 		{% endif %}
 	</div>
 </section>
 
-{# if card items #}
-<section class="px-4 py-8 md:px-12 md:py-12">
-	<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">
-		{% if latest_recipes_title %} 
-			{{ latest_recipes_title }}
-		{% else %}
-			{{ 'Latest Recipes'|t }}
-		{% endif %}
-	</h2>
-		<div class="cards sm:grid sm:grid-cols-[1fr_1fr_1fr] sm:gap-x-5">
-			{# card items #}
-		</div>
-</section>
+{% if latest_recipes %}
+	<section class="px-4 py-8 md:px-12 md:py-12">
+		<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">
+			{% if latest_recipes_title %} 
+				{{ latest_recipes_title }}
+			{% else %}
+				{{ 'Latest Recipes'|t }}
+			{% endif %}
+		</h2>
+		{{ latest_recipes }}
+	</section>
+{% endif %}
 
-{# if card items #}
-<section class="px-4 pt-8 md:px-12 md:pt-12">
-	<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">
-	{% if taxonomy_section_title %}
-		{{ taxonomy_section_title }}
-	{% else %}
-		{# Browse by taxonomy vocabulary name #}
-	{% endif %}
-	</h2>
-	<div class="cards sm:grid sm:grid-cols-[1fr_1fr] sm:gap-x-5">
-		{# card items #}
-	</div>
-</section>
+{% if taxonomy_section %}
+	<section class="px-4 pt-8 md:px-12 md:pt-12">
+		<h2 class="font-roboto-condensed text-5xl color-green text-(--color-green) mb-8 uppercase">
+			{% if taxonomy_section_title %}
+				{{ taxonomy_section_title }}
+			{% else %}
+				{{ 'Browse by'|t }} {{- taxonomy -}}
+			{% endif %}
+		</h2>
+			{{ taxonomy_section }}
+	</section>
+{% endif %}

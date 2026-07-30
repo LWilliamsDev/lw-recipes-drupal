@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for taxonomy term templates.
+ */
+
+function lw_recipes_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $vars) {
+  
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $vars['elements']['#taxonomy_term'];
+  $view_mode = $vars['elements']['#view_mode'];
+  $bundle = $term->bundle();
+
+  // Add suggestion: taxonomy-term--bundle--view-mode.html.twig
+  $suggestions[] = 'taxonomy_term__' . $bundle . '__' . $view_mode;
+
+
+}

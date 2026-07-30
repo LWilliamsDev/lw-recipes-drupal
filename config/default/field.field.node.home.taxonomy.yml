@@ -1,0 +1,26 @@
+uuid: d3253afa-0e73-4929-9d1b-2d68b6b3c723
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.taxonomy
+    - node.type.home
+    - taxonomy.vocabulary.diet
+id: node.home.taxonomy
+field_name: taxonomy
+entity_type: node
+bundle: home
+label: Taxonomy
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 79d93fe6-3e2d-4cd8-94d4-c5de81ffbcb3
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_vocabulary'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

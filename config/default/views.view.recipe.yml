@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.component
     - core.entity_view_mode.node.related
     - node.type.recipe
     - taxonomy.vocabulary.diet
@@ -191,6 +192,20 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: component
+      defaults:
+        style: false
+        row: false
       display_description: ''
       display_extenders:
         ajax_history: {  }

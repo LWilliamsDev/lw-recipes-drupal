@@ -97,7 +97,22 @@ display:
           custom_tag_output_lifespan: '-1'
           custom_tag_output_lifespan_expression: ''
       empty: {  }
-      sorts: {  }
+      sorts:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         vid:
           id: vid
@@ -153,6 +168,10 @@ display:
             operator: ''
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
       row:
         type: 'entity:taxonomy_term'
         options:
