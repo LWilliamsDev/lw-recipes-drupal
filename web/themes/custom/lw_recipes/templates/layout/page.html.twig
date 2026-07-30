@@ -11,7 +11,12 @@
 			</button>
 		</div>
 		<div id="search-form" class="hidden row-start-2 col-span-full justify-self-end mt-0 relative z-1 p-0">
-			{{ page.search }}
+			<form class="absolute -top-[9px] right-0 bg-(--color-tan) rounded-sm p-2 w-[241px] md:top-0" action="/search" method="get">
+				<div class="search-form">
+					<input type="text" name="keys" placeholder="{{'Search...'|t}}" class="rounded-sm border border-(--color-mid-green) border-solid p-2" id="search-input" />
+					<button type="submit" class="rounded-sm bg-(--color-brown) p-2 text-(--color-white) font-medium" id="search-submit">Go</button>
+				</div>
+			</form>
 		</div>
 		<div class="col-span-full row-start-3 mt-[15px] md:row-start-1 md:col-start-2 md:justify-self-end md:flex">
 			{{ page.main_menu }}

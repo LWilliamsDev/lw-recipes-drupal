@@ -97,11 +97,10 @@ a {
 	text-decoration: none;
 	color: var(--color-mid-green);
 }
-a:hover {
+a:hover, 
+.site-search .search-result li div:not(.search-excerpt) span a:hover,
+a.filter-link   {
 	color: var(--color-brown);
-}
-a.filter-link {
-  color: var(--color-brown);
 }
 a.filter-link:hover {
   color: white;
@@ -237,17 +236,29 @@ header nav li.active .menu-expand {
 .recipes-search header {
   display: contents;
 }
-.recipes-search .form-text {
+.recipes-search .form-text,
+.site-search .form-text {
   @apply rounded-sm border border-(--color-mid-green) border-solid p-2 w-full h-full;
 }
-.recipes-search .form-submit {
+.recipes-search .form-submit,
+.site-search .form-submit {
   @apply p-[10px] inline-block rounded-sm text-(--color-white) font-medium cursor-pointer;
 }
-.recipes-search .form-item-search label {
+.recipes-search .form-item-search label,
+.site-search .form-item-keys label {
   @apply sr-only;
 }
 .recipe__related .item-list ul {
   @apply md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-x-5;
+}
+.site-search form {
+  @apply grid grid-cols-[1fr_85px] gap-x-2;
+}
+.site-search .search-result li {
+  @apply mb-8;
+}
+.site-search .search-result li div:not(.search-excerpt) span a {
+  @apply text-2xl text-(--color-green) mb-2;
 }
 
 /* Media Queries */
