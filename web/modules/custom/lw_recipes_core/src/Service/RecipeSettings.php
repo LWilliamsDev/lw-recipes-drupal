@@ -46,7 +46,10 @@ class RecipeSettings {
     return NULL;
   }
 
-  return $url . '?' . $filter . '=' . $term_id;
+  /* As of this writing, all listing taxonomy filters are multi-value. The below code assumes this
+     is always the case. It will need to be changed if that changes. */ 
+
+  return $url . '?' . $filter . '[]=' . $term_id;
 }
 
 }

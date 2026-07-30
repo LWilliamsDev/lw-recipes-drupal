@@ -49,104 +49,114 @@
 	</header>
 	<main id="main">
 		<div id="root" class="px-4 md:px-12">
-				<div class="recipes-search mx-auto">
-					<div class="form mt-8 mb-8 md:mt-12 md:mb-12">
-						<form role="search" class="grid grid-cols-[1fr_40px] gap-x-2">
-							<label for="search" class="sr-only">Search</label>
-							<input type="text" id="search" class="rounded-sm border border-(--color-mid-green) border-solid p-2" name="search" placeholder="Search Recipes..." value="">
-							<button id="listing--search" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium cursor-pointer">Go</button>
-						</form>
-						<ul class="pt-5 flex flex-wrap gap-x-5">
-							<li>
-								<button data-refiner="course" data-id="5" class="chosen-refiner cursor-pointer rounded-sm border-1 text-(--color-brown) p-[5px]">Appetizer</button>
-							</li>
-						</ul>
-					</div>
-				<div class="results-container md:grid md:grid-cols-[0.5fr_2fr] md:gap-4"><div class="refiners mb-8 md:mb-0">
-					<div class="refiner-fieldset mb-4">
-						<fieldset>
-							<legend class="sr-only">Filter by Courses</legend>
-							<details class="tax-refiner">
-								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Courses</summary>
-									<div class="refiner-checkbox"><input id="course--5" data-slug="course" type="checkbox" value="5">
-									<label for="course--5" class="pl-2 text-(--color-dark-green)">Appetizer</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="course--7" data-slug="course" type="checkbox" value="7">
-									<label for="course--7" class="pl-2 text-(--color-dark-green)">Dessert</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="course--31" data-slug="course" type="checkbox" value="31">
-									<label for="course--31" class="pl-2 text-(--color-dark-green)">Entree</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="course--6" data-slug="course" type="checkbox" value="6">
-									<label for="course--6" class="pl-2 text-(--color-dark-green)">Side</label>
-								</div>
-							</details>
-						</fieldset>
-					</div>
-					<div class="refiner-fieldset mb-4">
-						<fieldset>
-							<legend class="sr-only">Filter by Diet</legend>
-							<details class="tax-refiner">
-								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Diet</summary>
-								<div class="refiner-checkbox">
-									<input id="diet--26" data-slug="diet" type="checkbox" value="26">
-									<label for="diet--26" class="pl-2 text-(--color-dark-green)">AIP</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--12" data-slug="diet" type="checkbox" value="12">
-									<label for="diet--12" class="pl-2 text-(--color-dark-green)">Keto</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--14" data-slug="diet" type="checkbox" value="14">
-									<label for="diet--14" class="pl-2 text-(--color-dark-green)">Low Carb</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--13" data-slug="diet" type="checkbox" value="13">
-									<label for="diet--13" class="pl-2 text-(--color-dark-green)">Low Fat</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--8" data-slug="diet" type="checkbox" value="8">
-									<label for="diet--8" class="pl-2 text-(--color-dark-green)">Paleo</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--9" data-slug="diet" type="checkbox" value="9">
-									<label for="diet--9" class="pl-2 text-(--color-dark-green)">Vegan</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--10" data-slug="diet" type="checkbox" value="10">
-									<label for="diet--10" class="pl-2 text-(--color-dark-green)">Vegetarian</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="diet--11" data-slug="diet" type="checkbox" value="11">
-									<label for="diet--11" class="pl-2 text-(--color-dark-green)">Whole30</label>
-								</div>
-							</details>
-						</fieldset>
-					</div>
-					<div class="refiner-fieldset mb-4">
-						<fieldset>
-							<legend class="sr-only">Filter by Allergen</legend>
-							<details class="tax-refiner">
-								<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Allergen</summary>
-								<div class="refiner-checkbox">
-									<input id="allergen--20" data-slug="allergen" type="checkbox" value="20">
-									<label for="allergen--20" class="pl-2 text-(--color-dark-green)">Dairy Free</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="allergen--21" data-slug="allergen" type="checkbox" value="21">
-									<label for="allergen--21" class="pl-2 text-(--color-dark-green)">Gluten Free</label>
-								</div>
-								<div class="refiner-checkbox">
-									<input id="allergen--22" data-slug="allergen" type="checkbox" value="22">
-									<label for="allergen--22" class="pl-2 text-(--color-dark-green)">Nut Free</label>
-								</div>
-							</details>
-						</fieldset>
-					</div>
-				</div>
+				<div class="recipes-search mx-auto grid md:grid-cols-[0.5fr_2fr] md:gap-x-4">
+					<header>
+						<div class="row-2 md:grid md:col-span-full">
+							<ul class="pt-5 flex flex-wrap gap-x-5">
+								<li>
+									<button data-refiner="course" data-id="5" class="chosen-refiner cursor-pointer rounded-sm border-1 text-(--color-brown) p-[5px]">Appetizer</button>
+								</li>
+							</ul>
+						</div>
+					</header>
+					<form>
+						<div class="form mt-8 md:mt-12 row-1 md:col-span-full grid grid-cols-[1fr_40px] gap-x-2">
+							<div>
+								<label for="search" class="sr-only">Search</label>
+								<input type="text" id="search" class="rounded-sm border border-(--color-mid-green) border-solid p-2 w-full h-full" name="search" placeholder="Search Recipes..." value="">
+							</div>
+							<div>
+								<button id="listing--search" class="button p-[10px] inline-block rounded-sm text-(--color-white) font-medium cursor-pointer">Go</button>
+							</div>
+						</div>
+						<div class="refiners mt-8 mb-8 md:mb-0 md:col-1 md:row-3 md:mt-12">
+						<div class="refiner-fieldset mb-4">
+							<fieldset>
+								<legend class="sr-only">Filter by Courses</legend>
+								<details class="tax-refiner">
+									<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Courses</summary>
+										<div class="refiner-checkbox">
+											<input id="course--5" data-slug="course" type="checkbox" value="5">
+											<label for="course--5" class="pl-2 text-(--color-dark-green)">Appetizer</label>
+										</div>
+										<div class="refiner-checkbox">
+											<input id="course--7" data-slug="course" type="checkbox" value="7">
+											<label for="course--7" class="pl-2 text-(--color-dark-green)">Dessert</label>
+										</div>
+										<div class="refiner-checkbox">
+											<input id="course--31" data-slug="course" type="checkbox" value="31">
+											<label for="course--31" class="pl-2 text-(--color-dark-green)">Entree</label>
+										</div>
+										<div class="refiner-checkbox">
+											<input id="course--6" data-slug="course" type="checkbox" value="6">
+											<label for="course--6" class="pl-2 text-(--color-dark-green)">Side</label>
+										</div>
+								</details>
+							</fieldset>
+						</div>
+						<div class="refiner-fieldset mb-4">
+							<fieldset>
+								<legend class="sr-only">Filter by Diet</legend>
+								<details class="tax-refiner">
+									<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Diet</summary>
+									<div class="refiner-checkbox">
+										<input id="diet--26" data-slug="diet" type="checkbox" value="26">
+										<label for="diet--26" class="pl-2 text-(--color-dark-green)">AIP</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--12" data-slug="diet" type="checkbox" value="12">
+										<label for="diet--12" class="pl-2 text-(--color-dark-green)">Keto</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--14" data-slug="diet" type="checkbox" value="14">
+										<label for="diet--14" class="pl-2 text-(--color-dark-green)">Low Carb</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--13" data-slug="diet" type="checkbox" value="13">
+										<label for="diet--13" class="pl-2 text-(--color-dark-green)">Low Fat</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--8" data-slug="diet" type="checkbox" value="8">
+										<label for="diet--8" class="pl-2 text-(--color-dark-green)">Paleo</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--9" data-slug="diet" type="checkbox" value="9">
+										<label for="diet--9" class="pl-2 text-(--color-dark-green)">Vegan</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--10" data-slug="diet" type="checkbox" value="10">
+										<label for="diet--10" class="pl-2 text-(--color-dark-green)">Vegetarian</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="diet--11" data-slug="diet" type="checkbox" value="11">
+										<label for="diet--11" class="pl-2 text-(--color-dark-green)">Whole30</label>
+									</div>
+								</details>
+							</fieldset>
+						</div>
+						<div class="refiner-fieldset">
+							<fieldset>
+								<legend class="sr-only">Filter by Allergen</legend>
+								<details class="tax-refiner">
+									<summary class="cursor-pointer text-(--color-mid-green) font-medium p-2 border-1 w-full rounded-t-sm md:border-0 md:rounded-t-none md:w-auto md:p-0">Allergen</summary>
+									<div class="refiner-checkbox">
+										<input id="allergen--20" data-slug="allergen" type="checkbox" value="20">
+										<label for="allergen--20" class="pl-2 text-(--color-dark-green)">Dairy Free</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="allergen--21" data-slug="allergen" type="checkbox" value="21">
+										<label for="allergen--21" class="pl-2 text-(--color-dark-green)">Gluten Free</label>
+									</div>
+									<div class="refiner-checkbox">
+										<input id="allergen--22" data-slug="allergen" type="checkbox" value="22">
+										<label for="allergen--22" class="pl-2 text-(--color-dark-green)">Nut Free</label>
+									</div>
+								</details>
+							</fieldset>
+						</div>
+						</div>
+					</form>
+				<div class="results-container md:mt-12 md:col-2 md:row-3">
 				<div class="results">
 					<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
 						<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">

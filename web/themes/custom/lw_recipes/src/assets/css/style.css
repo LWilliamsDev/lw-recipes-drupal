@@ -206,7 +206,15 @@ header nav li.active .menu-expand {
 .recipe__complex ul {
   @apply list-disc ml-[15px];
 }
-
+.current-page, .chosen-refiner:hover {
+  background: var(--color-brown);
+  color: var(--color-tan);
+}
+.chosen-refiner:after {
+    content: "×";
+    margin-left: 5px;
+    display: inline-block;
+}
 
 
 /* Drupal Overrides, because we cannot directly add classes to some elements without causing bigger problems */
@@ -224,6 +232,19 @@ header nav li.active .menu-expand {
 }
 .result-image img {
   @apply rounded-lg;
+}
+.recipes-search form,
+.recipes-search header {
+  display: contents;
+}
+.recipes-search .form-text {
+  @apply rounded-sm border border-(--color-mid-green) border-solid p-2 w-full h-full;
+}
+.recipes-search .form-submit {
+  @apply p-[10px] inline-block rounded-sm text-(--color-white) font-medium cursor-pointer;
+}
+.recipes-search .form-item-search label {
+  @apply sr-only;
 }
 
 /* Media Queries */
