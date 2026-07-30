@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link URL, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+
+    {# Conditionally add UL classes based on top menu level or a submenu #}
+    {% set ul_classes = menu_level == 0 
+        ? 'nav hidden md:!flex text-left md:gap-x-8' 
+        : 'submenu pl-4 w-full md:p-1 md:absolute md:z-1 md:top-12 md:shadow-2xl md:rounded-sm md:w-max md:left-0' 
+      %}
+
+    {% set ul_attributes = create_attribute().addClass(ul_classes) %}
+
+    <ul{{ ul_attributes }}>
+      {% for item in items %}
+          {# Conditionally add LI classes based on top menu level or a submenu #}
+          {% set level_li_classes = menu_level == 0 
+              ? ['py-1', 'flex', 'flex-wrap', 'border-b', 'border-solid', 'border-(--color-mid-green)', 'md:border-b-0', 'md:p-4'] 
+              : ['py-1', 'md:py-2'] 
+          %}
+
+          {% set li_classes = ['menu-item'] %}
+
+          {% if item.below is not empty %}
+            {% set li_classes = li_classes|merge(['md:relative', 'md:hover:bg-(--color-tan)', 'menu-item-has-children']) %}
+          {% endif %}
+
+          {% set li_classes = li_classes|merge(level_li_classes) %}
+
+          {% set li_attributes = create_attribute().addClass(li_classes) %}
+          <li{{ li_attributes }}>
+            {% set level_link_classes = menu_level == 0 
+                ? ['px-4', 'inline-block', 'md:px-0'] 
+                : ['px-4']
+            %}
+
+            {{ link(item.title, item.url, create_attribute({'class': level_link_classes})) }}
+            {% if item.below %}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+          </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
