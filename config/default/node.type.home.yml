@@ -1,7 +1,13 @@
 uuid: 7e959cd2-c8ab-478b-af85-cf61af0e2d06
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
 name: Home
 type: home
 description: null

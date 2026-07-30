@@ -1,0 +1,23 @@
+uuid: e59361b2-7489-49cc-9148-b3c67e21abd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.listing_page
+  module:
+    - node
+id: listing_page
+label: 'Listing Page'
+type: 'canonical_entities:node'
+pattern: '/[node:menu-link:parent:url:path]/[node:title]'
+selection_criteria:
+  e2368893-2a23-44c9-8304-34b2299cc398:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      listing_page: listing_page
+selection_logic: and
+weight: -5
+relationships: {  }
