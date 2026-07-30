@@ -26,9 +26,9 @@
   We call a macro which calls itself to render the full tree.
   https://twig.symfony.com/doc/3.x/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0) }}
+{{ menus.menu_links(items, attributes, 0, '') }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, parent_id) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -38,10 +38,20 @@
         : 'submenu pl-4 w-full md:p-1 md:absolute md:z-1 md:top-12 md:shadow-2xl md:rounded-sm md:w-max md:left-0' 
       %}
 
-    {% set ul_attributes = create_attribute().addClass(ul_classes) %}
+    {% set ul_id = menu_level == 0 
+      ? 'main-navigation-menu' 
+      : parent_id 
+    %}
+
+    {% set ul_attributes = create_attribute().setAttribute('id', ul_id).addClass(ul_classes) %}
+    
+  
 
     <ul{{ ul_attributes }}>
       {% for item in items %}
+      
+          {% set current_slug = item.title|clean_unique_id %}
+
           {# Conditionally add LI classes based on top menu level or a submenu #}
           {% set level_li_classes = menu_level == 0 
               ? ['py-1', 'flex', 'flex-wrap', 'border-b', 'border-solid', 'border-(--color-mid-green)', 'md:border-b-0', 'md:p-4'] 
@@ -63,9 +73,14 @@
                 : ['px-4']
             %}
 
+
             {{ link(item.title, item.url, create_attribute({'class': level_link_classes})) }}
             {% if item.below %}
-              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+               <button class="cursor-pointer ml-auto mr-4 open-toggle md:pointer-events-none md:mr-0" aria-label="Expand or collapse the {{ item.title }} submenu" id="toggle--{{ current_slug}}" aria-controls="{{ current_slug }}" aria-expanded="false">
+                <img src="{{ base_path ~ active_theme_path() }}/assets/img/expand.svg" alt="Expand the Recipes submenu" class="menu-expand" />
+                <img src="{{ base_path ~ active_theme_path() }}/assets/img//collapse.svg" alt="Collapse the Recipes submenu" class="menu-collapse"/>
+              </button>
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, current_slug) }}
             {% endif %}
           </li>
       {% endfor %}

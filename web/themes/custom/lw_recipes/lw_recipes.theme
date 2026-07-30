@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\block\Entity\Block;
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for taxonomy term templates.
  */
@@ -52,6 +54,37 @@ function lw_recipes_preprocess_pager(&$vars) {
     if ($pager) {
       // Get total pages count (1-indexed for easy printing)
       $vars['total_pages_count'] = $pager->getTotalPages();
+    }
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Add theme suggestion for menu based on its region, as the main menu in the header has
+ * some changes that we don't want when it is displayed elsewhere.
+ */
+function lw_recipes_preprocess_block(&$vars) {
+  // Check if this block contains a menu render array
+  if (isset($vars['content']['#menu_name'])) {
+    
+    // Make sure we have a valid block ID to inspect
+    if (!empty($vars['elements']['#id'])) {
+      
+      // Load the block configuration entity
+      $block = Block::load($vars['elements']['#id']);
+      
+      if ($block) {
+        // Extract the region this block is placed in (e.g., 'header', 'sidebar_first')
+        $region = $block->getRegion();
+        
+        // Append the region to the menu's internal #theme variable!
+        if (isset($vars['content']['#theme']) && is_string($vars['content']['#theme'])) {
+          // Example: 'menu__main' becomes 'menu__main__header'
+          $vars['content']['#theme'] .= '__' . $region;
+        }
+      }
     }
   }
 }
