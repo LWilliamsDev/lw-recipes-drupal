@@ -1,0 +1,26 @@
+{% set image = content.hero_image %}
+{% set excerpt = content.excerpt %}
+{% set terms = node.getCombinedAlphabetizedTermLinks(['diet', 'course', 'allergen', 'protein']) %}
+
+<div class="result-item mb-12 lg:mb-20 lg:flex lg:flex-wrap">
+	<div class="lg:order-2 result-image lg:ml-auto mb-5 lg:mb-0">
+		{{ image }}
+	</div>
+	<div class="lg:order-1 result-details">
+		<h2 class="text-2xl color-green text-(--color-green) mb-2">
+			<a href="{{ url }}">{{ node.label }}</a>
+		</h2>
+		<div class="mb-4 text-(--color-dark-green)">
+			{{ excerpt }}
+		</div>
+		{% if terms %}
+		<ul class="flex gap-2 flex-wrap">
+			{% for term in terms %}
+				<li>
+					<a href="{{ term.url }}" class="filter-link p-[5px] inline-block rounded-sm border-1 border-(--color-brown) text-(--color-brown) hover:text-(--color-white) hover:bg-(--color-brown) cursor-pointer">{{ term.text }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+</div>

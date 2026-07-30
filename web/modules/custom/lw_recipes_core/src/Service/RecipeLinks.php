@@ -29,41 +29,50 @@ class RecipeLinks {
       'text' => $this->t('Recipes'),
     ];
 
-    // Course taxonomy.
-    if ($courseLink = $this->getRecipeTermLink($recipe, 'course')) {
-      $breadcrumbs[] = $courseLink;
-    }
+    // Course taxonomy (Single or Multi-value handled implicitly via array_merge).
+    $courseLinks = $this->getRecipeTermLinks($recipe, 'course');
+    $breadcrumbs = array_merge($breadcrumbs, $courseLinks);
 
     // Diet taxonomy.
-    if ($dietLink = $this->getRecipeTermLink($recipe, 'diet')) {
-      $breadcrumbs[] = $dietLink;
-    }
+    $dietLinks = $this->getRecipeTermLinks($recipe, 'diet');
+    $breadcrumbs = array_merge($breadcrumbs, $dietLinks);
 
     return $breadcrumbs;
   }
 
   /**
-   * Extracts a specific taxonomy term field from a recipe and builds its link array.
-   * 
-   * Useful for external contexts when you have the Recipe object and want a specific field.
+   * Extracts taxonomy term fields from a recipe and builds their link arrays.
+   *
+   * Handles both single-value and multi-value fields seamlessly.
+   *
+   * @param \Drupal\lw_recipes_core\Entity\Recipe $recipe
+   *   The recipe entity.
+   * @param string $fieldName
+   *   The machine name of the taxonomy term reference field.
+   *
+   * @return array
+   *   An array of link arrays, or an empty array if none are found.
    */
-  public function getRecipeTermLink(Recipe $recipe, string $fieldName): ?array {
+  public function getRecipeTermLinks(Recipe $recipe, string $fieldName): array {
     if (!$recipe->hasField($fieldName) || $recipe->get($fieldName)->isEmpty()) {
-      return null;
+      return [];
     }
 
-    $term = $recipe->get($fieldName)->entity;
-    if ($term instanceof TermInterface) {
-      return $this->buildTermLink($term, $fieldName);
+    $links = [];
+    // Loop through referenced entities to natively support multi-value fields.
+    foreach ($recipe->get($fieldName)->referencedEntities() as $term) {
+      if ($term instanceof TermInterface) {
+        $links[] = $this->buildTermLink($term, $fieldName);
+      }
     }
 
-    return null;
+    return $links;
   }
 
   /**
    * Generates a generic link array directly from a taxonomy term.
-   * 
-   * Highly generic. Use this when you already have the TermInterface object 
+   *
+   * Highly generic. Use this when you already have the TermInterface object
    * in another context (e.g., inside a controller, preprocess function, or block).
    */
   public function buildTermLink(TermInterface $term, string $type): array {

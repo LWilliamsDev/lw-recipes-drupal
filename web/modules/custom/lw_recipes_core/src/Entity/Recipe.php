@@ -63,8 +63,37 @@ public function getNextRecipe(): array|null {
   ];
 }
 
-public function getRecipeTermLink(Recipe $recipe, $fieldName): array {
-  return \Drupal::service('lw_recipes_core.recipe_links')->getRecipeTermLink($this, $fieldName);
+public function getRecipeTermLinks($fieldName): array {
+  return \Drupal::service('lw_recipes_core.recipe_links')->getRecipeTermLinks($this, $fieldName);
+}
+
+/**
+ * Gets combined term links from multiple fields, sorted alphabetically.
+ *
+ * @param array $fieldNames
+ *   An array of field machine names to aggregate (e.g., ['diet', 'course']).
+ *
+ * @return array
+ *   A single, combined array of link arrays sorted alphabetically by text.
+ */
+public function getCombinedAlphabetizedTermLinks(array $fieldNames): array {
+  $combinedLinks = [];
+
+  $links_service =  \Drupal::service('lw_recipes_core.recipe_links');
+
+  // Gather all links across the requested fields.
+  foreach ($fieldNames as $fieldName) {
+    // Reuses your existing bundle method.
+    if ($links = $links_service->getRecipeTermLinks($this, $fieldName)) {
+      $combinedLinks = array_merge($combinedLinks, $links);
+    }
+  }
+
+  
+  // Alphabetize the combined result.
+  usort($combinedLinks, fn($a, $b) => strcasecmp($a['text'], $b['text']));
+
+  return $combinedLinks;
 }
 
 }

@@ -11,7 +11,7 @@ field_name: hero_image
 entity_type: node
 bundle: recipe
 label: 'Hero Image'
-description: ''
+description: 'Please upload image sized 1115x608 pixels.'
 required: true
 translatable: false
 default_value: {  }

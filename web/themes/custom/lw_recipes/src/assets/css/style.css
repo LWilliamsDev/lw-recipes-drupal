@@ -222,6 +222,9 @@ header nav li.active .menu-expand {
 .recipe-taxonomy__image img {
   @apply w-full h-auto rounded-lg;
 }
+.result-image img {
+  @apply rounded-lg;
+}
 
 /* Media Queries */
 @media only screen and (min-width:768px) {
