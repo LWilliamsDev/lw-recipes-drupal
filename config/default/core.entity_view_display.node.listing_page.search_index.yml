@@ -1,0 +1,20 @@
+uuid: d4262225-f255-44de-b820-fed46cd8fe11
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.listing_page.listing
+    - node.type.listing_page
+  module:
+    - user
+id: node.listing_page.search_index
+targetEntityType: node
+bundle: listing_page
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  links: true
+  listing: true
+  search_api_excerpt: true

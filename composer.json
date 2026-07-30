@@ -34,6 +34,7 @@
         "drupal/pathauto": "^1.12",
         "drupal/rabbit_hole": "^1.0",
         "drupal/redirect": "^1.9",
+        "drupal/search_api": "^1.41",
         "drupal/simple_sitemap": "^4.1",
         "drupal/smart_date": "^4.0",
         "drupal/tagify": "^2.0",
