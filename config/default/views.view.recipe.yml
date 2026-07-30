@@ -304,7 +304,23 @@ display:
             multiple: 0
           break_phrase: false
           not: true
+      style:
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: related
       defaults:
+        style: false
+        row: false
         arguments: false
       display_description: ''
       display_extenders:

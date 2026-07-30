@@ -74,12 +74,10 @@
 {% endif %}
 
 {% if related_recipes %}
-    <aside class="px-4 pt-8 md:px-12 md:pt-12">
+    <aside class="px-4 pt-8 md:px-12 md:pt-12 recipe__related">
 	    <div class="w-3/4">
 		    <h2 class="text-3xl font-roboto-condensed uppercase text-(--color-green) mb-[10px]">{{'You Might Also Like'|t}}</h2>
-			    <ul class="md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-x-5">
-                    {{ related_recipes }}
-			    </ul>
+                {{ related_recipes }}
 	    </div>
     </aside>
 {% endif %}

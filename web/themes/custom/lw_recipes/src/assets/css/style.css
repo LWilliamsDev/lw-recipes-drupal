@@ -246,6 +246,9 @@ header nav li.active .menu-expand {
 .recipes-search .form-item-search label {
   @apply sr-only;
 }
+.recipe__related .item-list ul {
+  @apply md:grid md:grid-cols-[1fr_1fr_1fr] md:gap-x-5;
+}
 
 /* Media Queries */
 @media only screen and (min-width:768px) {
