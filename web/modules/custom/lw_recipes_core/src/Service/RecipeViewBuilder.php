@@ -7,6 +7,10 @@ namespace Drupal\lw_recipes_core\Service;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\lw_recipes_core\Entity\Recipe;
 
+/**
+ * Build various recipe views that are printed on pages throughout the site.
+ */
+
 class RecipeViewBuilder {
 
   /**

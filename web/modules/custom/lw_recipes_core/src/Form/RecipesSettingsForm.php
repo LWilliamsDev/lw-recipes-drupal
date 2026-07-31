@@ -8,6 +8,11 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
+/**
+ * Build the form for users to save recipe-related sitewide settings to config.
+ * See also the RecipeSettings service class for the config part of this code.
+ */
+
 class RecipesSettingsForm extends ConfigFormBase {
 
   public function getFormId(): string {

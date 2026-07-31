@@ -7,6 +7,10 @@ namespace Drupal\lw_recipes_core\Service;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\NodeInterface;
 
+/**
+ * Service class to build previous/next navigation on recipe detail pages.
+ */
+
 class RecipePostNav {
 
   public function __construct(

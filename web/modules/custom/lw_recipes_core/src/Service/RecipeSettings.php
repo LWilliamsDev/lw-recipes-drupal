@@ -8,6 +8,12 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\NodeInterface;
 
+/**
+ * Service class to set up recipe settings config.
+ * Primarily used to set the URL for the Recipe Listing page, so that this can be
+ * used by other components to print pre-filtered links to the recipe listing page.
+ */
+
 class RecipeSettings {
 
   public function __construct(

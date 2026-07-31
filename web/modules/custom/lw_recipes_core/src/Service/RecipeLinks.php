@@ -9,7 +9,8 @@ use Drupal\lw_recipes_core\Entity\Recipe;
 use Drupal\taxonomy\TermInterface;
 
 /**
- * Service to handle recipe breadcrumbs and general recipe-related navigation links.
+ * Service to build breadcrumbs for recipe detail pages and build
+ * pre-filtered links to the recipe listing page.
  */
 class RecipeLinks {
 
