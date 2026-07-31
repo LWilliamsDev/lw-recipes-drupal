@@ -6,8 +6,8 @@ name: 'LW Recipes'
 mail: lisa@lisawilliams.net
 slogan: ''
 page:
-  403: ''
-  404: ''
+  403: /node/10
+  404: /node/9
   front: /node/5
 admin_compact_mode: false
 weight_select_max: 100
