@@ -1,14 +1,1 @@
 <?php 
-
-/**
-* Implement hook_preprocess_node()
-*/
-
-function lw_recipes_core_preprocess_node(array &$vars) {
-    $node = $vars['node'];
-
-    if ($node->bundle() == 'recipe' ) {
-        $vars['breadcrumbs'] = \Drupal::service('lw_recipes_core.recipe_links')
-            ->buildBreadcrumbs($node);
-    }
-}

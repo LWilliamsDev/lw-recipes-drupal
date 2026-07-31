@@ -94,6 +94,12 @@ public function getCombinedAlphabetizedTermLinks(array $fieldNames): array {
   usort($combinedLinks, fn($a, $b) => strcasecmp($a['text'], $b['text']));
 
   return $combinedLinks;
-}
+
+  }
+
+  public function getBreadcrumbs(): array {
+    return \Drupal::service('lw_recipes_core.recipe_links')
+            ->buildBreadcrumbs($this);
+  }
 
 }
