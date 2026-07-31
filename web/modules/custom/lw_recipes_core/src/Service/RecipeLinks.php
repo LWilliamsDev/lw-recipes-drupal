@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\lw_recipes_core\Service;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -77,7 +79,7 @@ class RecipeLinks {
    */
   public function buildTermLink(TermInterface $term, string $type): array {
     return [
-      'url' => $this->recipeSettings->buildListingUrl($type, $term->id()),
+      'url' => $this->recipeSettings->buildListingUrl($type, (int) $term->id()),
       'text' => $term->label(),
     ];
   }

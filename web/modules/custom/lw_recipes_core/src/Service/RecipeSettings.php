@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\lw_recipes_core\Service;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -18,7 +20,7 @@ class RecipeSettings {
   }
 
   public function getListingPageId(): ?int {
-    return $this->getConfig()->get('recipe_listing_page');
+    return (int) $this->getConfig()->get('recipe_listing_page');
   }
 
   public function getListingPage(): ?NodeInterface {
