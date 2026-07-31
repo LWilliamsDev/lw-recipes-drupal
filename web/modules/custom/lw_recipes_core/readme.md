@@ -5,7 +5,7 @@ This is the module that goes along with the Recipes theme. It is needed because 
 ## Features
 - [Entity Bundle Classes](src/Entity)
 - [Service Classes](src/Service)
-- [Recipe Site Global Settings Form](src/Form/RecipeSettingsForm.php)
+- [Recipe Site Global Settings Form](src/Form/RecipesSettingsForm.php)
 
 ## Architecture
 
