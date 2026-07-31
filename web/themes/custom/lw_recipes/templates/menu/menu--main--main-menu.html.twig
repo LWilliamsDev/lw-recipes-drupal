@@ -77,8 +77,8 @@
             {{ link(item.title, item.url, create_attribute({'class': level_link_classes})) }}
             {% if item.below %}
                <button class="cursor-pointer ml-auto mr-4 open-toggle md:pointer-events-none md:mr-0" aria-label="Expand or collapse the {{ item.title }} submenu" id="toggle--{{ current_slug}}" aria-controls="{{ current_slug }}" aria-expanded="false">
-                <img src="{{ base_path ~ active_theme_path() }}/assets/img/expand.svg" alt="Expand the Recipes submenu" class="menu-expand" />
-                <img src="{{ base_path ~ active_theme_path() }}/assets/img//collapse.svg" alt="Collapse the Recipes submenu" class="menu-collapse"/>
+                <img src="{{ '/' ~ active_theme_path() ~ '/assets/img/expand.svg'}}" alt="Expand the Recipes submenu" class="menu-expand" />
+                <img src="{{ '/' ~ active_theme_path() ~ '/assets/img//collapse.svg'}}" alt="Collapse the Recipes submenu" class="menu-collapse"/>
               </button>
               {{ menus.menu_links(item.below, attributes, menu_level + 1, current_slug) }}
             {% endif %}

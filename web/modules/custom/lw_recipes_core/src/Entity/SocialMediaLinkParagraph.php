@@ -27,7 +27,11 @@ class SocialMediaLinkParagraph extends Paragraph {
 
     if ($this->hasField('social_media_site') && !$this->get('social_media_site')->isEmpty()) {
         $icon = $this->get('social_media_site')->value;
-        return \Drupal::service('extension.list.theme')->getPath('lw_recipes') . '/assets/img/' . $icon_map[$icon];
+
+        $theme_path = \Drupal::service('extension.list.theme')->getPath('lw_recipes');
+        $asset_path = $theme_path . '/assets/img/' . $icon_map[$icon];
+        
+        return \Drupal::service('file_url_generator')->generateString($asset_path);
     }
 
     return null;
