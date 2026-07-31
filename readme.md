@@ -12,7 +12,7 @@ This repo was set up for a fictional recipes website named "Fit & Flavor", with 
   - AJAX updates
 
 ## Organization
-- [Recipes Theme](web/themes/lw-recipes/readme.md)
+- [Recipes Theme](web/themes/lw_recipes/readme.md)
    - Contains an accessible main menu that supports keyboard navigation
    - Requires LW Recipes Core  module (as the module provides things like functions used by Twig templates)
 - [Recipes Module](web/modules/custom/lw_recipes_core/readme.md)
@@ -21,7 +21,7 @@ This repo was set up for a fictional recipes website named "Fit & Flavor", with 
    - Site Settings Config Object
 
 ## Credits
-In order to make the [HTML flats](web/app/themes/lw-recipes/src) more appealing, I have added sample recipes and stock photos to most of the flats. The one exception to this is the recipe search flat. For that, I added a 300x164 placeholder image for all images to save time.
+In order to make the [HTML flats](web/themes/lw_recipes/src) more appealing, I have added sample recipes and stock photos to most of the flats. The one exception to this is the recipe search flat. For that, I added a 300x164 placeholder image for all images to save time.
 
 This section provides credits to the author of this content. Please note that this is not a real website. I do not intend to publish a real website with this code. The purpose of this project is to serve as a code sample for prospective employers for full stack development jobs. I am not in the business of creating recipes or content for recipe-related websites. Additionally, I make custom themes and do not sell general purpose themes. When I make themes for clients, it is their responsibility to provide content, including images.
 
