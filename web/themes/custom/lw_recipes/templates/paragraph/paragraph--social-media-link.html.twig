@@ -1,0 +1,10 @@
+{% set icon = paragraph.getSocialMediaIcon() %}
+{% set alt = content.social_media_site %}
+{% set link = paragraph.getUrl() %}
+
+{% if icon and link %}
+  <li>
+    <a href="{{ link }}" target="_blank"><img src="{{ icon }}" alt="{{ alt }}"></a>
+  </li>
+{% endif %}
+
