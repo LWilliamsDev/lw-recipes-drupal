@@ -1,0 +1,23 @@
+uuid: 5160ac47-8b78-4eab-aa4b-818def0efc72
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer:64a8c031-4b2b-4e83-a341-4d95f61450b9'
+  module:
+    - block_content
+  theme:
+    - lw_recipes
+id: lw_recipes_footercontentblock
+theme: lw_recipes
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:64a8c031-4b2b-4e83-a341-4d95f61450b9'
+settings:
+  id: 'block_content:64a8c031-4b2b-4e83-a341-4d95f61450b9'
+  label: 'Footer Content Block'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,23 @@
+uuid: 54826bcc-13ad-4ba0-ba84-fe8ea52686a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.social_media_url
+    - paragraphs.paragraphs_type.social_media_link
+  module:
+    - link
+id: paragraph.social_media_link.social_media_url
+field_name: social_media_url
+entity_type: paragraph
+bundle: social_media_link
+label: 'Social Media URL'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

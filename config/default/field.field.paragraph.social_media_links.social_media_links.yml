@@ -1,0 +1,34 @@
+uuid: 1b97419e-66bf-4974-b3af-caa8cd882b62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.social_media_links
+    - paragraphs.paragraphs_type.social_media_link
+    - paragraphs.paragraphs_type.social_media_links
+  module:
+    - entity_reference_revisions
+id: paragraph.social_media_links.social_media_links
+field_name: social_media_links
+entity_type: paragraph
+bundle: social_media_links
+label: 'Social Media Links'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      social_media_link: social_media_link
+    negate: 0
+    target_bundles_drag_drop:
+      social_media_link:
+        weight: 3
+        enabled: true
+      social_media_links:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

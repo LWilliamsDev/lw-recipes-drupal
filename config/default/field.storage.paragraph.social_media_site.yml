@@ -1,0 +1,33 @@
+uuid: 6938f77f-6413-43ae-824b-dce9c3610972
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.social_media_site
+field_name: social_media_site
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: facebook
+      label: Facebook
+    -
+      value: instagram
+      label: Instagram
+    -
+      value: linkedin
+      label: LinkedIn
+    -
+      value: youtube
+      label: YouTube
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
