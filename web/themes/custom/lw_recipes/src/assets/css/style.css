@@ -214,6 +214,9 @@ header nav li.active .menu-expand {
     margin-left: 5px;
     display: inline-block;
 }
+.social-icons li:first-child a {
+  @apply ml-[-12px];
+}
 
 
 /* Drupal Overrides, because we cannot directly add classes to some elements without causing bigger problems */

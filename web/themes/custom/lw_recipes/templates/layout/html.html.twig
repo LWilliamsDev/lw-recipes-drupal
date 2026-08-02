@@ -10,7 +10,9 @@
         <js-placeholder token="{{ placeholder_token }}">
     </head>
     <body {{ attributes }}>
-        <a href="#main" class="skip-link sr-only">Skip to main content</a>
+        <nav aria-label="Skip Links">
+            <a href="#main" class="skip-link sr-only focus:not-sr-only">Skip to main content</a>
+        </nav>
         {{ page_top }}
         {{ page }}
         {{ page_bottom }}
